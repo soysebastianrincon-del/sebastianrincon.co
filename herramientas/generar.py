@@ -140,11 +140,12 @@ def nav(depth, actual):
     sub = ''.join(f'<li>{a(u, t)}</li>' for u, t in SERVICIOS)
     serv_cur = ' aria-current="page"' if actual.startswith('/servicios/') else ''
     return f'''<nav class="nav" aria-label="Principal">
+  <a class="skip" href="#main">Saltar al contenido</a>
   <div class="wrap nav-in">
     <a href="{pref(depth)}" class="logo"><img class="logo-mark" src="{r('/assets/img/marca/sr-mark.png', depth)}" alt="" width="38" height="33"><span>Sebastián Rincón<small>Pauta digital · Embudos de venta</small></span></a>
-    <ul class="menu"><li>{a('/sobre-mi/', 'Sobre mí')}</li><li class="has-sub"><a href="{r('/servicios/', depth)}"{serv_cur}>Servicios</a><ul class="sub">{sub}</ul></li><li>{a('/resultados/', 'Resultados')}</li><li>{a('/blog/', 'Blog')}</li><li>{a('/emprendimientos/', 'Emprendimientos')}</li><li class="m-only">{a('/contacto/', 'Contacto')}</li></ul>
+    <ul class="menu" id="menu"><li>{a('/sobre-mi/', 'Sobre mí')}</li><li class="has-sub"><a href="{r('/servicios/', depth)}"{serv_cur}>Servicios</a><ul class="sub">{sub}</ul></li><li>{a('/resultados/', 'Resultados')}</li><li>{a('/blog/', 'Blog')}</li><li>{a('/emprendimientos/', 'Emprendimientos')}</li><li class="m-only">{a('/contacto/', 'Contacto')}</li></ul>
     <a href="{WA}" target="_blank" rel="noopener" class="btn btn-gold nav-cta">WhatsApp</a>
-    <button class="burger" aria-label="Abrir menú" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 8h18M3 16h18"/></svg></button>
+    <button class="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 8h18M3 16h18"/></svg></button>
   </div>
 </nav>'''
 
@@ -168,7 +169,7 @@ def footer(depth, slugs_existentes):
     <div class="foot-grid">
       <div>
         <a href="{pref(depth)}" class="logo"><img class="logo-mark" src="{r('/assets/img/marca/sr-mark.png', depth)}" alt="" width="38" height="33"><span>Sebastián Rincón<small>Pauta digital · Embudos de venta</small></span></a>
-        <p style="max-width:340px">Sebastián Rincón Peña, trafficker con 8 años invirtiendo en Meta Ads y Google Ads. Fundador de Since Agencia Marketing Digital. Colombia.</p>
+        <p class="foot-about">Sebastián Rincón Peña, trafficker con 8 años invirtiendo en Meta Ads y Google Ads. Fundador de Since Agencia Marketing Digital. Colombia.</p>
       </div>
       <div><h4>Servicios</h4><ul>{serv}</ul></div>
       <div><h4>Guías</h4><ul>{guias}</ul></div>
@@ -285,6 +286,7 @@ def slugify(t):
 
 def inline(t, depth):
     t = esc(t).replace('&#x27;', "'")
+    t = re.sub(r'&quot;(.+?)&quot;', '“\\1”', t)
     t = re.sub(r'`([^`]+)`', r'<code>\1</code>', t)
     def link(m):
         txt, url = m.group(1), html.unescape(m.group(2))
@@ -461,7 +463,7 @@ def pagina_articulo(a, todos, slugs):
     out = head(depth, titulo_tag, a['descripcion'], url, graph, og_type='article', extra=extra)
     out += '\n' + nav(depth, url) + f'''
 
-<main>
+<main id="main">
 <header class="page-hero art-hero">
   <div class="wrap">
     {crumbs_html(items, depth)}
@@ -477,7 +479,7 @@ def pagina_articulo(a, todos, slugs):
 <section class="art-sec">
   <div class="wrap art-grid">
     <aside class="art-side">
-      <nav class="toc" aria-label="Contenido del artículo"><h2>Contenido</h2><ol>{toc_html}</ol></nav>
+      <details class="toc-m" open><summary>Contenido del artículo</summary><nav class="toc" aria-label="Contenido del artículo"><h2>Contenido</h2><ol>{toc_html}</ol></nav></details>
       <div class="side-cta"><span class="kicker">Servicio</span><p><strong>{esc(serv_nombre)}</strong><br>¿Prefieres que lo haga por ti? Revisemos tu caso.</p><a class="more" href="{r(serv_url, depth)}">Ver servicio {ARROW}</a></div>
     </aside>
     <article class="article">
@@ -522,7 +524,7 @@ def pagina_lista(depth, url, titulo_tag, desc, h1, lead, items_crumbs, grupos, k
 '''
     out = head(depth, titulo_tag, desc, url, graph) + '\n' + nav(depth, url) + f'''
 
-<main>
+<main id="main">
 <header class="page-hero">
   <div class="wrap">
     {crumbs_html(items_crumbs, depth)}
@@ -603,6 +605,7 @@ def actualizar_existente(rel_path, arts, slugs):
     if 'application/rss+xml' not in s and '<link rel="preconnect"' in s:
         s = s.replace('<link rel="preconnect"', f'<link rel="alternate" type="application/rss+xml" title="Blog de Sebastián Rincón" href="{DOM}/blog/feed.xml">\n<link rel="preconnect"', 1)
     s = s.replace('content="index, follow, max-image-preview:large"', 'content="index, follow, max-image-preview:large, max-snippet:-1"')
+    s = s.replace('<main>', '<main id="main">', 1)
     s = actualizar_jsonld(s, rel_path)
     # bloque de guías relacionadas
     s = re.sub(r'\n?<!-- blog:relacionados -->.*?<!-- /blog:relacionados -->\n?', '\n', s, flags=re.S)

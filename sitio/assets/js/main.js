@@ -16,6 +16,13 @@
     var open = menu.classList.toggle('open');
     burger.setAttribute('aria-expanded', open);
   });
+  var closeMenu = function () { menu.classList.remove('open'); burger.setAttribute('aria-expanded', 'false'); };
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && menu.classList.contains('open')) { closeMenu(); burger.focus(); } });
+  menu.addEventListener('click', function (e) { if (e.target.closest('a')) closeMenu(); });
+
+  // Índice del artículo: cerrado por defecto en móvil
+  var tocM = document.querySelector('.toc-m');
+  if (tocM && window.matchMedia('(max-width:1020px)').matches) tocM.removeAttribute('open');
 
   // Aparición al hacer scroll (una sola vez)
   var items = document.querySelectorAll('.rv, .portrait');

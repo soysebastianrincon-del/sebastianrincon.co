@@ -234,15 +234,16 @@
 </head>
 <body>
 <nav class="nav" aria-label="Principal">
+  <a class="skip" href="#main">Saltar al contenido</a>
   <div class="wrap nav-in">
     <a href="../../" class="logo"><img class="logo-mark" src="../../assets/img/marca/sr-mark.png" alt="" width="38" height="33"><span>Sebastián Rincón<small>Pauta digital · Embudos de venta</small></span></a>
-    <ul class="menu"><li><a href="../../sobre-mi/">Sobre mí</a></li><li class="has-sub"><a href="../../servicios/">Servicios</a><ul class="sub"><li><a href="../../servicios/pauta-meta-ads/">Pauta en Meta Ads</a></li><li><a href="../../servicios/pauta-google-ads/">Pauta en Google Ads</a></li><li><a href="../../servicios/tiendas-shopify/">Tiendas en Shopify</a></li><li><a href="../../servicios/pauta-empresas-de-servicios/">Pauta para empresas de servicios</a></li><li><a href="../../servicios/publicidad-para-medicos-y-clinicas/">Publicidad para médicos y clínicas</a></li></ul></li><li><a href="../../resultados/">Resultados</a></li><li><a href="../../blog/" aria-current="page">Blog</a></li><li><a href="../../emprendimientos/">Emprendimientos</a></li><li class="m-only"><a href="../../contacto/">Contacto</a></li></ul>
+    <ul class="menu" id="menu"><li><a href="../../sobre-mi/">Sobre mí</a></li><li class="has-sub"><a href="../../servicios/">Servicios</a><ul class="sub"><li><a href="../../servicios/pauta-meta-ads/">Pauta en Meta Ads</a></li><li><a href="../../servicios/pauta-google-ads/">Pauta en Google Ads</a></li><li><a href="../../servicios/tiendas-shopify/">Tiendas en Shopify</a></li><li><a href="../../servicios/pauta-empresas-de-servicios/">Pauta para empresas de servicios</a></li><li><a href="../../servicios/publicidad-para-medicos-y-clinicas/">Publicidad para médicos y clínicas</a></li></ul></li><li><a href="../../resultados/">Resultados</a></li><li><a href="../../blog/" aria-current="page">Blog</a></li><li><a href="../../emprendimientos/">Emprendimientos</a></li><li class="m-only"><a href="../../contacto/">Contacto</a></li></ul>
     <a href="https://wa.me/573013291994?text=Hola%20Sebasti%C3%A1n%2C%20le%C3%AD%20tu%20gu%C3%ADa%20%22Shopify%20en%20Colombia%3A%20pagos%2C%20pesos%2C%20env%C3%ADos%20y%20facturaci%C3%B3n%22.%20Vendo%20___%20y%20quiero%20que%20revises%20mi%20caso." target="_blank" rel="noopener" class="btn btn-gold nav-cta">WhatsApp</a>
-    <button class="burger" aria-label="Abrir menú" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 8h18M3 16h18"/></svg></button>
+    <button class="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 8h18M3 16h18"/></svg></button>
   </div>
 </nav>
 
-<main>
+<main id="main">
 <header class="page-hero art-hero">
   <div class="wrap">
     <ol class="crumbs"><li><a href="../../">Inicio</a></li><li><a href="../../blog/">Blog</a></li><li><a href="../../blog/tema/shopify/">Shopify</a></li><li aria-current="page">Shopify en Colombia: pagos, pesos, envíos y facturación</li></ol>
@@ -258,7 +259,7 @@
 <section class="art-sec">
   <div class="wrap art-grid">
     <aside class="art-side">
-      <nav class="toc" aria-label="Contenido del artículo"><h2>Contenido</h2><ol><li><a href="#pagos-en-shopify-colombia-como-funcionan-sin-shopify-payment">Pagos en Shopify Colombia: cómo funcionan sin Shopify Payments</a></li><li><a href="#precios-en-pesos-colombianos">Precios en pesos colombianos</a></li><li><a href="#envios-como-despachar-a-toda-colombia-desde-shopify">Envíos: cómo despachar a toda Colombia desde Shopify</a></li><li><a href="#facturacion-electronica-dian-desde-shopify">Facturación electrónica DIAN desde Shopify</a></li><li><a href="#orden-recomendado-para-dejar-todo-listo">Orden recomendado para dejar todo listo</a></li><li><a href="#preguntas-frecuentes">Preguntas frecuentes</a></li></ol></nav>
+      <details class="toc-m" open><summary>Contenido del artículo</summary><nav class="toc" aria-label="Contenido del artículo"><h2>Contenido</h2><ol><li><a href="#pagos-en-shopify-colombia-como-funcionan-sin-shopify-payment">Pagos en Shopify Colombia: cómo funcionan sin Shopify Payments</a></li><li><a href="#precios-en-pesos-colombianos">Precios en pesos colombianos</a></li><li><a href="#envios-como-despachar-a-toda-colombia-desde-shopify">Envíos: cómo despachar a toda Colombia desde Shopify</a></li><li><a href="#facturacion-electronica-dian-desde-shopify">Facturación electrónica DIAN desde Shopify</a></li><li><a href="#orden-recomendado-para-dejar-todo-listo">Orden recomendado para dejar todo listo</a></li><li><a href="#preguntas-frecuentes">Preguntas frecuentes</a></li></ol></nav></details>
       <div class="side-cta"><span class="kicker">Servicio</span><p><strong>Tiendas en Shopify</strong><br>¿Prefieres que lo haga por ti? Revisemos tu caso.</p><a class="more" href="../../servicios/tiendas-shopify/">Ver servicio <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a></div>
     </aside>
     <article class="article">
@@ -278,7 +279,7 @@
 <p>Mi criterio, en este orden:</p>
 <ol><li><strong>Que el cliente pague con lo que ya usa.</strong> En Colombia eso es tarjeta, PSE y Nequi como mínimo. Si tu público es joven, Nequi y Daviplata pesan mucho.</li><li><strong>Que la experiencia tenga los menos pasos posibles.</strong> Prueba tú mismo una compra desde el celular. Si te pide crear una cuenta o te saca a otra página con otro diseño, tu cliente siente lo mismo.</li><li><strong>Que le pase el evento de compra correcto a Shopify.</strong> Si la pasarela no devuelve al cliente a la página de confirmación del pedido, la compra puede no registrarse bien en el píxel de Meta y en Google. Esto es crítico si vas a pautar.</li><li><strong>Comisión y tiempos de desembolso.</strong> Importan, pero después de lo anterior. Una pasarela un punto más barata que te hace perder ventas en el checkout sale cara.</li></ol>
 <h3>Pagos manuales: contraentrega y transferencia</h3>
-<p>Shopify permite crear métodos de pago manuales, como &quot;Pago contraentrega&quot; o &quot;Transferencia bancaria&quot;. El pedido queda pendiente de pago y tú lo marcas como pagado cuando recibes la plata.</p>
+<p>Shopify permite crear métodos de pago manuales, como “Pago contraentrega” o “Transferencia bancaria”. El pedido queda pendiente de pago y tú lo marcas como pagado cuando recibes la plata.</p>
 <p>La contraentrega sube la conversión en categorías donde el cliente desconfía de pagar por adelantado, pero trae devoluciones y pedidos que nadie recibe. Si la ofreces, confirma cada pedido por WhatsApp antes de despacharlo y evalúa limitarla por zona o por valor del pedido.</p>
 <h2 id="precios-en-pesos-colombianos">Precios en pesos colombianos</h2>
 <p>Configura la <strong>moneda de la tienda en pesos colombianos (COP)</strong> desde el inicio. Cambiarla después de tener pedidos es más complicado y puede afectar reportes.</p>
@@ -344,7 +345,7 @@
     <div class="foot-grid">
       <div>
         <a href="../../" class="logo"><img class="logo-mark" src="../../assets/img/marca/sr-mark.png" alt="" width="38" height="33"><span>Sebastián Rincón<small>Pauta digital · Embudos de venta</small></span></a>
-        <p style="max-width:340px">Sebastián Rincón Peña, trafficker con 8 años invirtiendo en Meta Ads y Google Ads. Fundador de Since Agencia Marketing Digital. Colombia.</p>
+        <p class="foot-about">Sebastián Rincón Peña, trafficker con 8 años invirtiendo en Meta Ads y Google Ads. Fundador de Since Agencia Marketing Digital. Colombia.</p>
       </div>
       <div><h4>Servicios</h4><ul><li><a href="../../servicios/pauta-meta-ads/">Pauta en Meta Ads</a></li><li><a href="../../servicios/pauta-google-ads/">Pauta en Google Ads</a></li><li><a href="../../servicios/tiendas-shopify/">Tiendas en Shopify</a></li><li><a href="../../servicios/pauta-empresas-de-servicios/">Pauta para empresas de servicios</a></li><li><a href="../../servicios/publicidad-para-medicos-y-clinicas/">Publicidad para médicos y clínicas</a></li></ul></div>
       <div><h4>Guías</h4><ul><li><a href="../../blog/que-es-un-trafficker/">Qué es un trafficker</a></li><li><a href="../../blog/cuanto-invertir-en-meta-ads/">Cuánto invertir en Meta Ads</a></li><li><a href="../../blog/cuanto-cuesta-google-ads-en-colombia/">Cuánto cuesta Google Ads</a></li><li><a href="../../blog/cuanto-cuesta-una-tienda-shopify-en-colombia/">Cuánto cuesta una tienda Shopify</a></li><li><a href="../../blog/que-es-el-roas/">Qué es el ROAS</a></li><li><a href="../../blog/">Todas las guías</a></li></ul></div>

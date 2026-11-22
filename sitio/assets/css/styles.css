@@ -456,3 +456,36 @@ picture{display:contents}
 .paper .prose a{color:var(--gold-text-on-paper)}
 .mid-cta{margin:40px 0 8px;padding:20px 24px;border:1px solid var(--rule);border-left:3px solid var(--gold);display:grid;gap:10px;justify-items:start}
 .mid-cta p{color:#C9C5BD;margin:0}
+
+/* ---------- Ajustes de diseño y accesibilidad (auditoría nov 2026) ---------- */
+html{color-scheme:dark;-webkit-tap-highlight-color:transparent}
+h1,h2,h3,.claim,blockquote p{text-wrap:balance}
+p,li,dd{text-wrap:pretty}
+.skip{position:absolute;left:-999px;top:0}
+.skip:focus{left:16px;top:16px;z-index:200;background:var(--gold);color:#000;padding:10px 14px;font-weight:500}
+.sub{transition:opacity .2s var(--ease),transform .2s var(--ease),visibility .2s}
+.btn{transition:background .25s,color .25s,border-color .25s,transform .15s var(--ease)}
+.btn:active{transform:scale(.97)}
+.btn-line{border-color:rgba(237,235,232,.45)}
+input,select,textarea{border-bottom-color:rgba(237,235,232,.5)}
+input:focus,select:focus,textarea:focus{border-bottom-width:2px}
+.foot-grid .logo{display:flex}
+.foot-about{max-width:340px}
+.wa-float{background:#128C7E}
+.burger{padding:10px;margin-right:-10px}
+.crumbs a,.foot-grid a,.more{display:inline-block;padding-block:10px;margin-block:-10px}
+.foot-grid li{margin-bottom:14px}
+.chips a{padding:11px 18px}
+.byline img,.author-box img{filter:none;background:#5B5B5B}
+@media (max-width:1280px){.process{grid-template-columns:1fr 1fr;row-gap:20px}.process li:nth-child(2){border-right:0;margin-right:0}}
+@media (max-width:860px){.wa-float{right:16px;bottom:calc(16px + env(safe-area-inset-bottom))}}
+@media (max-width:400px){.logo small{display:none}}
+.toc-m > summary{display:none}
+@media (max-width:1020px){
+  .toc-m > summary{display:flex;justify-content:space-between;cursor:pointer;list-style:none;padding:14px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);font-size:.78rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+  .toc-m > summary::-webkit-details-marker{display:none}
+  .toc-m > summary::after{content:"+";color:var(--gold);font-size:1.1rem;letter-spacing:0}
+  .toc-m[open] > summary::after{content:"–"}
+  .toc-m .toc h2{display:none}
+  .toc-m .toc ol{border-top:0}
+}
