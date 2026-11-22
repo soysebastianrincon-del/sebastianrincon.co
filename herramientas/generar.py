@@ -201,7 +201,7 @@ def closing(titulo='¿Revisamos tu cuenta?'):
       <a class="wa ulink" href="{WA}" target="_blank" rel="noopener">+57 301 329 1994</a>
       <div class="ctas"><a href="{WA}" target="_blank" rel="noopener" class="btn btn-gold">Escríbeme por WhatsApp {ARROW}</a><a href="https://www.instagram.com/soysebastianrincon/" target="_blank" rel="noopener" class="btn btn-line">Instagram</a></div>
     </div>
-    <p class="muted rv">Escríbeme con lo que vendes y lo que estás invirtiendo hoy. Te respondo yo, no un asistente.</p>
+    <p class="muted rv">Escríbeme con lo que vendes y lo que estás invirtiendo hoy. El primer mensaje lo leo y respondo yo.</p>
   </div>
 </section>'''
 
@@ -411,6 +411,16 @@ def seccion_guias(arts, depth, kicker='Guías', titulo='Guías relacionadas', te
 
 
 # ---------------------------------------------------------------- páginas del blog
+def cta_medio(cuerpo):
+    """Inserta un llamado a WhatsApp antes del tercer H2 del artículo."""
+    pos = [m.start() for m in re.finditer(r'<h2 id=', cuerpo)]
+    if len(pos) < 3:
+        return cuerpo
+    box = (f'<aside class="mid-cta"><p><strong>¿No sabes cuál es tu número?</strong> Escríbeme qué vendes y cuánto inviertes, y lo revisamos juntos.</p>'
+           f'<a href="{WA}" target="_blank" rel="noopener" class="more">Escríbeme por WhatsApp {ARROW}</a></aside>\n')
+    return cuerpo[:pos[2]] + box + cuerpo[pos[2]:]
+
+
 def pagina_articulo(a, todos, slugs):
     depth = 2
     url = f'/blog/{a["slug"]}/'
@@ -472,7 +482,7 @@ def pagina_articulo(a, todos, slugs):
     </aside>
     <article class="article">
       <div class="tldr"><b>En corto</b><p>{inline(a.get('resumen', a['descripcion']), depth)}</p></div>
-{cuerpo}
+{cta_medio(cuerpo)}
       <div class="art-cta"><p><strong>¿Quieres que revise tu caso?</strong> Escríbeme por WhatsApp con lo que vendes y cuánto inviertes hoy, y te digo por dónde empezaría.</p><a href="{WA}" target="_blank" rel="noopener" class="btn btn-gold">Escríbeme por WhatsApp {ARROW}</a></div>
       {faq_html}
       <div class="author-box"><picture><source srcset="{pic}.webp" type="image/webp"><img src="{pic}.jpg" alt="Sebastián Rincón Peña" width="96" height="112" loading="lazy"></picture><div><span class="kicker">Sobre el autor</span><p><strong>Sebastián Rincón Peña</strong> es trafficker con 8 años haciendo pauta en Meta Ads y Google Ads y creando tiendas en Shopify. Fundó <a href="https://agenciasincemarketing.com" target="_blank" rel="noopener">Since Agencia Marketing Digital</a>, que ha acompañado a más de 100 empresas en Colombia y el exterior, y es cofundador de Medipro.</p><a class="more" href="{r('/sobre-mi/', depth)}">Conoce a Sebastián {ARROW}</a></div></div>
@@ -748,12 +758,43 @@ def main():
         if rel in generadas:
             continue
         actualizar_existente(rel, arts, slugs)
+    personalizar_whatsapp(arts)
     n = sitemap(arts)
     feed(arts)
     llms(arts)
     print(f'{len(arts)} artículos, {n} URLs en el sitemap')
     for e in errores:
         print('AVISO:', e)
+
+
+# ---------------------------------------------------------------- mensajes de WhatsApp por página
+from urllib.parse import quote
+
+WA_MSGS = {
+    '/servicios/pauta-meta-ads/': 'Hola Sebastián, vengo de tu página de Meta Ads. Vendo ___ y quiero que revises mis campañas de Facebook e Instagram.',
+    '/servicios/pauta-google-ads/': 'Hola Sebastián, vengo de tu página de Google Ads. Vendo ___ y quiero que revises mis campañas en Google.',
+    '/servicios/tiendas-shopify/': 'Hola Sebastián, necesito una tienda Shopify para vender ___. ¿Hablamos?',
+    '/servicios/pauta-empresas-de-servicios/': 'Hola Sebastián, mi empresa vende ___ (servicio de alto valor) y quiero más clientes potenciales calificados. ¿Lo revisamos?',
+    '/servicios/publicidad-para-medicos-y-clinicas/': 'Hola Sebastián, soy médico/clínica de ___ (especialidad y ciudad). Me llegan mensajes pero pocos agendan. ¿Lo revisamos?',
+    '/resultados/': 'Hola Sebastián, vi tus resultados. Mi empresa vende ___ y quiero saber si mi caso aplica.',
+}
+WA_DEFECTO = 'Hola Sebastián, vengo de tu web. Vendo ___ y hoy invierto ___ al mes en pauta. Quiero que revises mi cuenta.'
+
+
+def personalizar_whatsapp(arts):
+    titulos = {f'/blog/{a["slug"]}/': a['titulo'] for a in arts}
+    for f in glob.glob(os.path.join(SITIO, '**', '*.html'), recursive=True):
+        rel = os.path.relpath(f, SITIO).replace(os.sep, '/')
+        u = url_de(rel)
+        if u in titulos:
+            msg = f'Hola Sebastián, leí tu guía "{titulos[u]}". Vendo ___ y quiero que revises mi caso.'
+        else:
+            msg = WA_MSGS.get(u, WA_DEFECTO)
+        txt = quote(msg, safe='')
+        s = open(f, encoding='utf-8').read()
+        n = re.sub(r'https://wa\.me/573013291994\?text=[^"\'\s<]*', 'https://wa.me/573013291994?text=' + txt, s)
+        if n != s:
+            open(f, 'w', encoding='utf-8').write(n)
 
 
 if __name__ == '__main__':

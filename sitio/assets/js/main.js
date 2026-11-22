@@ -39,7 +39,13 @@
   document.addEventListener('click', function (e) {
     var a = e.target.closest && e.target.closest('a[href]');
     if (!a || !window.gtag) return;
-    if (a.href.indexOf('wa.me') > -1) { gtag('event', 'click_whatsapp', { page: location.pathname }); gtag('event', 'generate_lead', { method: 'whatsapp', page: location.pathname }); }
+    if (a.href.indexOf('wa.me') > -1) {
+      var loc = a.classList.contains('wa-float') ? 'flotante' : a.classList.contains('nav-cta') ? 'menu' :
+        a.closest('.hero, .page-hero') ? 'hero' : a.closest('.mid-cta') ? 'blog-medio' : a.closest('.art-cta') ? 'blog-final' :
+        a.closest('.closing') ? 'cierre' : a.closest('footer') ? 'pie' : 'contenido';
+      gtag('event', 'click_whatsapp', { page: location.pathname, cta_location: loc });
+      gtag('event', 'generate_lead', { method: 'whatsapp', page: location.pathname, cta_location: loc });
+    }
     else if (a.href.indexOf('instagram.com') > -1) gtag('event', 'click_instagram', { page: location.pathname });
   });
 

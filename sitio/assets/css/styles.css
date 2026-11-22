@@ -454,3 +454,5 @@ picture{display:contents}
 .prose a{color:var(--gold);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
 .prose a:hover{color:#F0C81C}
 .paper .prose a{color:var(--gold-text-on-paper)}
+.mid-cta{margin:40px 0 8px;padding:20px 24px;border:1px solid var(--rule);border-left:3px solid var(--gold);display:grid;gap:10px;justify-items:start}
+.mid-cta p{color:#C9C5BD;margin:0}
