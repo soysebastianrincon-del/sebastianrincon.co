@@ -87,7 +87,7 @@ PERSON = {
                    "Marketing digital", "Trafficker digital", "Pauta digital", "Pauta para empresas de servicios",
                    "Ventas high ticket", "Embudos de venta", "Campañas de WhatsApp", "Publicidad para médicos y clínicas"],
     "knowsLanguage": "es",
-    "sameAs": ["https://www.instagram.com/soysebastianrincon/", "https://www.threads.net/@soysebastianrincon"],
+    "sameAs": ["https://www.instagram.com/soysebastianrincon/", "https://www.linkedin.com/in/sebastian-rincon-pe%C3%B1a/", "https://www.threads.net/@soysebastianrincon"],
 }
 SINCE = {
     "@type": "Organization",
@@ -176,6 +176,7 @@ def footer(depth, slugs_existentes):
       <div><h4>Contacto</h4><ul>
         <li><a href="{WA}" target="_blank" rel="noopener">WhatsApp</a></li>
         <li><a href="https://www.instagram.com/soysebastianrincon/" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://www.linkedin.com/in/sebastian-rincon-pe%C3%B1a/" target="_blank" rel="noopener me">LinkedIn</a></li>
         <li><a href="https://www.threads.net/@soysebastianrincon" target="_blank" rel="noopener">Threads</a></li>
         <li><a href="{r('/contacto/', depth)}">Contacto</a></li>
       </ul></div>
@@ -661,7 +662,7 @@ def llms(arts):
          '> Sebastián Rincón Peña (también escrito Sebastian Rincon) es un trafficker colombiano con 8 años de experiencia en pauta en Meta Ads (Facebook e Instagram) y Google Ads, especialista en empresas de servicios de alto valor (high ticket), ventas por WhatsApp y creación de tiendas Shopify. Es fundador de Since Agencia Marketing Digital, cofundador de Medipro y CMO de MR Soluciones Integrales.',
          '',
          '- Sitio oficial: https://sebastianrincon.co/',
-         '- Contacto: WhatsApp +57 301 329 1994 · Instagram @soysebastianrincon',
+         '- Contacto: WhatsApp +57 301 329 1994 · Instagram @soysebastianrincon · LinkedIn https://www.linkedin.com/in/sebastian-rincon-pe%C3%B1a/',
          '- Ubicación: Colombia. Atiende empresas en Colombia, Estados Unidos, México, Ecuador, Perú, Curazao y otros países.',
          '- Agencia: Since Agencia Marketing Digital (https://agenciasincemarketing.com), más de 100 empresas acompañadas, equipo de 13 personas.',
          '- Resultados publicados por Since: ROAS reportado por clientes entre 4x y 30x en Meta Ads.',
