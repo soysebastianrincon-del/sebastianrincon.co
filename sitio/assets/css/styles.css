@@ -919,57 +919,59 @@ html{scrollbar-color:#3a3833 var(--ink)}
 
 /* =====================================================================
    Escala contenida (22 nov 2026): el usuario pidió que nada se vea tan
-   grande. Reduce títulos, cifras y espacios entre secciones.
+   grande (dos rondas). Reduce títulos, cifras y espacios entre secciones.
    ===================================================================== */
-:root{--sec-pad:96px}
-section{padding:88px 0}
-.hero{padding:120px 0 70px}
-.page-hero{padding:128px 0 56px}
-.svc-hero{padding-top:116px}
-.pull{padding:96px 0}
+:root{--sec-pad:76px}
+body{font-size:16px}
+section{padding:72px 0}
+.hero{padding:104px 0 56px}
+.page-hero{padding:112px 0 44px}
+.svc-hero{padding-top:100px}
+.pull{padding:72px 0}
 
-h2{font-size:clamp(1.8rem,3.2vw,2.6rem)}
-.hero h1,.hx-title{font-size:clamp(2.6rem,5.2vw,4.8rem);margin:22px 0 22px}
-.hero .claim,.hx .claim{font-size:clamp(1.25rem,1.9vw,1.7rem)}
-.page-hero h1,.svc-hero h1{font-size:clamp(2.2rem,4.4vw,3.8rem)}
-.split-head h2{font-size:clamp(1.9rem,3.4vw,3rem)}
-.intro-text h2,.guide-col h2{font-size:clamp(1.8rem,3vw,2.7rem);margin-bottom:26px}
-.faq-head h2{font-size:clamp(1.8rem,2.8vw,2.5rem)}
-.closing h2{font-size:clamp(2.1rem,4.2vw,3.6rem)}
-.closing .wa{font-size:clamp(1.5rem,2.4vw,2.1rem)}
-.venture h2,.wa-box h2{font-size:clamp(1.7rem,2.6vw,2.2rem)}
-.pull blockquote{font-size:clamp(1.8rem,3.2vw,2.8rem)}
-.art-hero h1{font-size:clamp(2rem,3.6vw,3rem)}
-.article h2{font-size:clamp(1.45rem,2.4vw,1.9rem);margin:44px 0 18px}
+h2{font-size:clamp(1.55rem,2.5vw,2.1rem)}
+.hero h1,.hx-title{font-size:clamp(2.2rem,3.9vw,3.6rem);margin:18px 0 18px}
+.hero .claim,.hx .claim{font-size:clamp(1.15rem,1.6vw,1.45rem)}
+.page-hero h1,.svc-hero h1{font-size:clamp(1.9rem,3.4vw,3rem)}
+.split-head h2{font-size:clamp(1.6rem,2.7vw,2.4rem)}
+.intro-text h2,.guide-col h2{font-size:clamp(1.55rem,2.4vw,2.2rem);margin-bottom:22px}
+.faq-head h2{font-size:clamp(1.55rem,2.3vw,2.05rem)}
+.closing h2{font-size:clamp(1.8rem,3.2vw,2.8rem)}
+.closing .wa{font-size:clamp(1.3rem,2vw,1.8rem)}
+.venture h2,.wa-box h2{font-size:clamp(1.5rem,2.1vw,1.85rem)}
+.pull blockquote{font-size:clamp(1.55rem,2.6vw,2.3rem)}
+.art-hero h1{font-size:clamp(1.8rem,3vw,2.6rem)}
+.article h2{font-size:clamp(1.35rem,2vw,1.7rem);margin:40px 0 16px}
 
-/* Resultados: cifra grande pero proporcionada */
-.score{padding:26px 0 32px}
-.score-n{font-size:clamp(3.2rem,6.4vw,5.6rem)}
-.score-meta h3{font-size:1.4rem}
+/* Resultados */
+.score{padding:20px 0 26px}
+.score-n{font-size:clamp(2.6rem,4.6vw,4.2rem)}
+.score-meta h3{font-size:1.25rem}
 /* Video + cifras */
-.stmt-q{font-size:clamp(2rem,4vw,3.6rem);margin-bottom:44px}
-.stmt-figs dd{font-size:clamp(2rem,3.6vw,3.2rem)}
-.stmt-lead{font-size:1.12rem}
+.stmt-q{font-size:clamp(1.7rem,3vw,2.7rem);margin-bottom:36px}
+.stmt-figs dd{font-size:clamp(1.7rem,2.7vw,2.4rem)}
+.stmt-lead{font-size:1.05rem}
 /* Filas de servicios y cifras */
-.bigrow{padding:26px 0}
-.bigrow h3{font-size:clamp(1.4rem,2.2vw,2rem)}
-.figs .val{font-size:clamp(2.2rem,3.6vw,3.2rem)}
-.ledger .val{font-size:clamp(1.9rem,3vw,2.6rem)}
+.bigrow{padding:22px 0}
+.bigrow h3{font-size:clamp(1.25rem,1.8vw,1.65rem)}
+.figs .val{font-size:clamp(1.9rem,2.8vw,2.6rem)}
+.ledger .val{font-size:clamp(1.7rem,2.4vw,2.2rem)}
 
 @media (max-width:860px){
-  :root{--sec-pad:72px}
-  section{padding:68px 0}
-}
-@media (max-width:560px){
   :root{--sec-pad:60px}
   section{padding:56px 0}
-  .hero,.page-hero,.svc-hero{padding-top:104px}
-  .hero h1,.hx-title{font-size:clamp(2.3rem,10.5vw,3rem)}
-  .page-hero h1,.svc-hero h1{font-size:clamp(2rem,9vw,2.6rem)}
-  h2,.split-head h2,.intro-text h2,.guide-col h2,.faq-head h2{font-size:clamp(1.7rem,7.6vw,2.1rem)}
-  .closing h2{font-size:clamp(1.9rem,8.6vw,2.4rem)}
-  .score-n{font-size:clamp(2.8rem,14vw,3.6rem)}
-  .stmt-q{font-size:clamp(1.8rem,8.4vw,2.3rem);margin-bottom:32px}
-  .stmt-figs dd{font-size:clamp(1.8rem,8vw,2.3rem)}
-  .figs .val{font-size:clamp(1.9rem,9vw,2.4rem)}
+}
+@media (max-width:560px){
+  :root{--sec-pad:52px}
+  body{font-size:15.5px}
+  section{padding:48px 0}
+  .hero,.page-hero,.svc-hero{padding-top:96px}
+  .hero h1,.hx-title{font-size:clamp(2rem,9vw,2.5rem)}
+  .page-hero h1,.svc-hero h1{font-size:clamp(1.8rem,8vw,2.2rem)}
+  h2,.split-head h2,.intro-text h2,.guide-col h2,.faq-head h2{font-size:clamp(1.5rem,6.6vw,1.8rem)}
+  .closing h2{font-size:clamp(1.7rem,7.4vw,2.1rem)}
+  .score-n{font-size:clamp(2.4rem,11vw,3rem)}
+  .stmt-q{font-size:clamp(1.6rem,7.2vw,2rem);margin-bottom:28px}
+  .stmt-figs dd{font-size:clamp(1.6rem,7vw,2rem)}
+  .figs .val{font-size:clamp(1.7rem,7.6vw,2.1rem)}
 }
