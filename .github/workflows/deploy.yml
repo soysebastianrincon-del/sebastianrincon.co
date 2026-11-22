@@ -26,6 +26,13 @@ jobs:
         # La web vive en la carpeta sitio/. Si no existe, se usa el .zip antiguo.
         run: |
           if [ -d sitio ]; then cp -r sitio _site; else mkdir _site && unzip -q sitio-deploy.zip -d _site; fi
+      - name: Versionar CSS y JS
+        # Cada publicación cambia el ?v= de estilos y scripts para que ningún
+        # navegador se quede con una versión vieja guardada.
+        run: |
+          V="${GITHUB_SHA::10}"
+          find _site -name '*.html' -exec sed -i -E "s/(styles\.css|main\.js|motion\.js)\?v=[A-Za-z0-9]+/\1?v=${V}/g" {} +
+          grep -rho 'styles\.css?v=[A-Za-z0-9]*' _site | sort | uniq -c
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
