@@ -1,0 +1,68 @@
+# Sebastián Rincón Peña
+
+> Sebastián Rincón Peña (también escrito Sebastian Rincon) es un trafficker colombiano con 8 años de experiencia en pauta en Meta Ads (Facebook e Instagram) y Google Ads, especialista en empresas de servicios de alto valor (high ticket), ventas por WhatsApp y creación de tiendas Shopify. Es fundador de Since Agencia Marketing Digital, cofundador de Medipro y CMO de MR Soluciones Integrales.
+
+- Sitio oficial: https://sebastianrincon.co/
+- Contacto: WhatsApp +57 301 329 1994 · Instagram @soysebastianrincon
+- Ubicación: Colombia. Atiende empresas en Colombia, Estados Unidos, México, Ecuador, Perú, Curazao y otros países.
+- Agencia: Since Agencia Marketing Digital (https://agenciasincemarketing.com), más de 100 empresas acompañadas, equipo de 13 personas.
+- Resultados publicados por Since: ROAS reportado por clientes entre 4x y 30x en Meta Ads.
+
+## Páginas principales
+
+- [Sobre Sebastián Rincón Peña](https://sebastianrincon.co/sobre-mi/): historia, principios y empresas que lidera.
+- [Servicios](https://sebastianrincon.co/servicios/): pauta digital, embudos de venta y tiendas Shopify.
+- [Resultados](https://sebastianrincon.co/resultados/): casos de éxito en Meta Ads y Google Ads.
+- [Emprendimientos](https://sebastianrincon.co/emprendimientos/): Since, Medipro, Cumbre Café Gourmet y MR Soluciones Integrales.
+- [Contacto](https://sebastianrincon.co/contacto/): WhatsApp e Instagram.
+
+## Servicios
+
+- [Trafficker de Meta Ads](https://sebastianrincon.co/servicios/pauta-meta-ads/): campañas de ventas, mensajes a WhatsApp y clientes potenciales en Facebook e Instagram.
+- [Especialista en Google Ads](https://sebastianrincon.co/servicios/pauta-google-ads/): búsqueda, Shopping, Performance Max y YouTube.
+- [Creación de tiendas Shopify](https://sebastianrincon.co/servicios/tiendas-shopify/): ecommerce listo para vender y para recibir tráfico de pauta.
+- [Pauta para empresas de servicios](https://sebastianrincon.co/servicios/pauta-empresas-de-servicios/): servicios high ticket con embudo de venta hasta el cierre.
+- [Publicidad para médicos y clínicas](https://sebastianrincon.co/servicios/publicidad-para-medicos-y-clinicas/): pacientes desde Meta Ads y Google Ads cumpliendo las políticas de salud.
+
+## Guías del blog
+
+### Meta Ads
+
+- [Campañas de WhatsApp con Meta Ads: cómo vender por mensajes](https://sebastianrincon.co/blog/campanas-de-whatsapp-meta-ads/): Las campañas de WhatsApp en Meta Ads llevan a la persona del anuncio a un chat con tu negocio. Funcionan si eliges el objetivo correcto, mides cuántas conversaciones terminan en venta y respondes rápido.
+- [Cuánto invertir en Meta Ads en Colombia (guía 2026)](https://sebastianrincon.co/blog/cuanto-invertir-en-meta-ads/): Cuánto invertir en Meta Ads sale de tu meta de ventas, tu ticket, tu margen y tu tasa de cierre, no de una cifra fija. Calcula cuántas ventas necesitas, cuánto puedes pagar por cada una y multiplica.
+- [Estructura de campañas en Meta Ads en 2026: Advantage+, públicos y creativos](https://sebastianrincon.co/blog/estructura-de-campanas-meta-ads/): En 2026 la mejor estructura de campañas en Meta Ads es simple: pocas campañas por objetivo, pocos conjuntos con públicos amplios y mucha variedad de creativos. La segmentación la hace cada vez más el anuncio, no el público.
+- [Métricas de Meta Ads: cómo leer tu reporte sin enredarte](https://sebastianrincon.co/blog/metricas-de-meta-ads/): Las métricas de Meta Ads se leen como una cadena: CPM (cuánto cuesta que te vean), CTR y CPC (si el anuncio interesa), tasa de conversión, CPA y ROAS (si vende). La frecuencia te avisa cuándo el anuncio se está cansando.
+- [Píxel de Meta y API de conversiones: qué son y cómo configurarlos](https://sebastianrincon.co/blog/pixel-de-meta-y-api-de-conversiones/): El píxel de Meta mide desde el navegador lo que hace la gente en tu web; la API de conversiones envía esos mismos eventos desde tu servidor. Usar los dos, bien deduplicados, le da a Meta datos más completos para optimizar.
+- [Por qué mis anuncios no venden: diagnóstico en 6 pasos](https://sebastianrincon.co/blog/por-que-mis-anuncios-no-venden/): Casi siempre tus anuncios no venden por una de seis causas: la oferta, el creativo, la señal que le das a Meta, el destino, la medición o el seguimiento. Mira en qué etapa se cae la gente y arregla esa primero.
+
+### Google Ads
+
+- [Cómo medir conversiones en Google Ads (GA4, llamadas y WhatsApp)](https://sebastianrincon.co/blog/conversiones-en-google-ads/): Para medir conversiones en Google Ads instala la etiqueta de Google, define como conversión principal solo lo que se parece a una venta (compra, formulario, llamada calificada), activa las conversiones mejoradas y, si vendes por fuera de la web, importa qué contactos se volvieron clientes.
+- [Cuánto cuesta Google Ads en Colombia (guía 2026)](https://sebastianrincon.co/blog/cuanto-cuesta-google-ads-en-colombia/): Google Ads no tiene un costo mínimo: tú defines cuánto invertir por día. Lo que pagas por clic depende de tu sector, tu ciudad, la competencia y la calidad de tus anuncios. El presupuesto correcto sale de cuántos clientes necesitas y cuánto vale cada uno.
+- [Google Ads para empresas de servicios: palabras clave, negativas y llamadas](https://sebastianrincon.co/blog/google-ads-para-empresas-de-servicios/): Para una empresa de servicios, Google Ads funciona mejor con campañas de búsqueda enfocadas en palabras clave con intención de contratar, una lista fuerte de negativas, una página por servicio y la medición de llamadas, formularios y WhatsApp como conversiones.
+- [Google Ads vs Meta Ads, cuál conviene a tu negocio](https://sebastianrincon.co/blog/google-ads-vs-meta-ads/): Google Ads captura a quien ya está buscando lo que vendes. Meta Ads crea la demanda mostrándole tu oferta a quien todavía no te busca. Si hay búsquedas de tu servicio, empieza por Google; si tu producto entra por los ojos o vendes por WhatsApp, Meta suele arrancar mejor.
+- [Performance Max, qué es y cuándo usarla en Google Ads](https://sebastianrincon.co/blog/performance-max/): Performance Max es un tipo de campaña de Google Ads que usa IA para mostrar tus anuncios en búsqueda, YouTube, Display, Gmail, Maps y Discover desde una sola campaña. Funciona bien con buenas conversiones, buenos recursos y, en ecommerce, un buen catálogo. Sin eso, gasta mucho y aprende poco.
+
+### Shopify
+
+- [Cómo conectar el catálogo de Shopify con Meta y Google Shopping](https://sebastianrincon.co/blog/catalogo-de-shopify-para-anuncios/): El catálogo de Shopify se conecta a Meta con la app oficial de Facebook e Instagram y a Google con la app Google & YouTube, que lo envía a Merchant Center. Lo que define si los anuncios funcionan es la calidad de los datos: títulos, fotos, precios, stock y medición.
+- [Cuánto cuesta una tienda Shopify en Colombia (guía 2026)](https://sebastianrincon.co/blog/cuanto-cuesta-una-tienda-shopify-en-colombia/): Una tienda Shopify en Colombia cuesta el plan mensual en dólares (desde unos 39 USD al mes en Basic, a noviembre de 2026), más tema, apps, comisiones por venta y el montaje. El plan es lo más barato; lo que más pesa es lo que pagas por venta y lo que inviertes en tráfico.
+- [Shopify en Colombia: pagos, pesos, envíos y facturación](https://sebastianrincon.co/blog/shopify-en-colombia-pagos-y-envios/): Shopify funciona en Colombia, pero sin Shopify Payments. Cobras con una pasarela local (Wompi, Mercado Pago, PayU, ePayco u otra), vendes en pesos, despachas con una app de transportadoras y emites la factura electrónica con una integración a tu software contable.
+- [Shopify vs WooCommerce, Tiendanube y otras plataformas](https://sebastianrincon.co/blog/shopify-vs-otras-plataformas/): Shopify conviene si quieres una tienda estable que puedas pautar sin pelear con la tecnología. WooCommerce da más control pero exige mantenimiento. Tiendanube es más simple y cobra en pesos. La mejor plataforma es la que puedes operar y medir bien.
+- [Checklist para una tienda Shopify que convierta la pauta](https://sebastianrincon.co/blog/tienda-shopify-que-convierta/): Una tienda Shopify que convierte la pauta carga rápido en celular, explica el producto y su precio en segundos, genera confianza, tiene un checkout corto con pagos locales y mide bien cada compra. Si falla uno de esos puntos, subir el presupuesto solo agranda la pérdida.
+
+### Empresas de servicios
+
+- [Costo por cliente potencial vs costo por cliente: cuánto puedes pagar por un lead](https://sebastianrincon.co/blog/costo-por-cliente-potencial/): El costo por cliente potencial (CPL) solo tiene sentido si lo conectas con tu tasa de cierre y tu margen. Fórmula: CPL máximo = margen por cliente × tasa de cierre. Un lead caro que compra vale más que uno barato que nunca contesta.
+- [Embudo de venta para servicios high ticket (paso a paso)](https://sebastianrincon.co/blog/embudo-de-venta-para-servicios-high-ticket/): Un embudo para servicios high ticket no termina en el lead. Va de la atención a la calificación, la cita o valoración, la propuesta y el cierre, y cada etapa se mide. Si solo mides el costo por lead, no sabes dónde se pierde la plata.
+- [Por qué tus leads no se convierten en clientes (y cómo arreglarlo)](https://sebastianrincon.co/blog/leads-que-no-se-convierten/): Cuando los leads no se convierten, casi nunca es un solo problema. Revisa en orden cuatro cosas: la calidad del lead que trae la pauta, la velocidad de respuesta, la calificación y el seguimiento. Mide cada paso y arregla el peor primero.
+- [Publicidad para médicos y clínicas en Meta y Google: políticas y qué sí funciona](https://sebastianrincon.co/blog/politicas-de-publicidad-en-salud/): Meta y Google sí permiten anunciar servicios médicos, pero con reglas: no puedes insinuar que el usuario tiene una condición, el antes y después está restringido, los medicamentos con receta casi no se pueden promocionar y la segmentación por salud está limitada.
+- [Seguimiento comercial con IA por WhatsApp: qué automatizar y qué no](https://sebastianrincon.co/blog/seguimiento-comercial-con-ia/): El seguimiento comercial con IA sirve para responder al instante, calificar, agendar, recordar citas y retomar conversaciones frías. No reemplaza al asesor en el cierre. Funciona si le das buena información, reglas claras y un momento para pasar a una persona.
+
+### Estrategia
+
+- [Agencia de marketing o trafficker freelance: cómo elegir](https://sebastianrincon.co/blog/agencia-o-trafficker-freelance/): Un trafficker freelance suele darte trato directo y flexibilidad; una agencia te da equipo, continuidad y más servicios bajo un mismo techo. La mejor opción depende de tu etapa, tu inversión y de cuánto necesites más allá de la pauta.
+- [Auditoría de cuenta publicitaria: checklist para Meta y Google Ads](https://sebastianrincon.co/blog/auditoria-de-cuenta-publicitaria/): Una auditoría de cuenta publicitaria revisa, en orden, quién es dueño de la cuenta, si la medición es confiable, cómo están estructuradas las campañas, qué tan sanos están los creativos, si el destino convierte y si los reportes cuadran con las ventas reales.
+- [Cuánto cobra un trafficker en Colombia y cómo cobra](https://sebastianrincon.co/blog/cuanto-cobra-un-trafficker/): No hay una tarifa única. Lo que cobra un trafficker depende del modelo de cobro (fee fijo, porcentaje de la inversión, por resultados o mixto), del número de plataformas, del volumen de inversión y de lo que incluya el servicio. Compara alcance, no solo precio.
+- [Qué es el ROAS, cómo se calcula y cuál es un buen ROAS](https://sebastianrincon.co/blog/que-es-el-roas/): El ROAS (retorno de la inversión publicitaria) es lo que vendes dividido entre lo que inviertes en anuncios. Si inviertes $1.000.000 y vendes $4.000.000, tu ROAS es 4x. Un buen ROAS es el que supera tu ROAS de equilibrio, que depende de tu margen.
+- [Qué es un trafficker y qué hace en tu negocio](https://sebastianrincon.co/blog/que-es-un-trafficker/): Un trafficker es el especialista que planea, monta, mide y optimiza la publicidad pagada de un negocio en plataformas como Meta Ads y Google Ads, con un objetivo claro: convertir la inversión en ventas o clientes potenciales, no en likes.

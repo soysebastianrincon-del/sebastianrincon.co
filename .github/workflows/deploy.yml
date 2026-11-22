@@ -22,8 +22,10 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
-      - name: Descomprimir la web
-        run: mkdir _site && unzip -q sitio-deploy.zip -d _site
+      - name: Preparar la web
+        # La web vive en la carpeta sitio/. Si no existe, se usa el .zip antiguo.
+        run: |
+          if [ -d sitio ]; then cp -r sitio _site; else mkdir _site && unzip -q sitio-deploy.zip -d _site; fi
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
