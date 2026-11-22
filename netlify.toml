@@ -1,0 +1,4 @@
+# Netlify publica la web desde la carpeta sitio/
+[build]
+  publish = "sitio"
+  command = ""
