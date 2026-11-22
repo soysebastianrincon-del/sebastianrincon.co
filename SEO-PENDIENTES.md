@@ -31,7 +31,7 @@
 3. **Enlaces desde tus otras webs**: es lo que más ayuda a que Google te asocie con tu nombre. Pide un enlace a `sebastianrincon.co` con el texto "Sebastián Rincón" desde:
    - agenciasincemarketing.com (página "Nosotros": "Fundada por Sebastián Rincón Peña")
    - medipro.com.co, mrsolucionesintegrales.co y cumbrecafegourmet.com (en el pie de página o en "Nosotros")
-4. **Redes**: pon `sebastianrincon.co` en la bio de Instagram y Threads. Si tienes LinkedIn, Facebook, YouTube o TikTok, pásame los enlaces y los agrego al schema (`sameAs`). Esto ayuda a que Google arme tu panel de conocimiento.
+4. **Redes**: pon `sebastianrincon.co` en la bio de Instagram y Threads. LinkedIn ya está conectado. Si abres Facebook, YouTube o TikTok, agrégalos a `sameAs` en `herramientas/generar.py`. Esto ayuda a que Google arme tu panel de conocimiento.
 5. **Perfil de LinkedIn**: si no lo tienes, créalo como "Sebastián Rincón Peña · Trafficker · Fundador de Since" con enlace a la web. Suele salir de segundo en las búsquedas de nombre.
 6. **Publicar seguido**: un artículo nuevo cada 1 o 2 semanas mantiene el sitio vivo. Sigue `contenido/GUIA-REDACCION.md`.
 7. **Comparte cada guía** en Instagram y Threads con el enlace. Las visitas de marca también cuentan.
