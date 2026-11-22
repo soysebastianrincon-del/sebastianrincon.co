@@ -399,16 +399,23 @@ def fila_articulo(a, depth, n):
             f'<h3>{esc(a["titulo"])}</h3><p>{esc(a["descripcion"])}</p></div>{GO}</a>')
 
 
+def fila_guia(a, depth, n):
+    return (f'<a class="gcard" href="{r("/blog/" + a["slug"] + "/", depth)}">'
+            f'<h3>{esc(a["titulo"])}</h3><p>{esc(a["descripcion"])}</p><span class="gcard-go">Leer guía {ARROW}</span></a>')
+
+
 def seccion_guias(arts, depth, kicker='Guías', titulo='Guías relacionadas', texto='Lo que le explico a mis clientes antes de invertir, por escrito.'):
+    """Bloque de guías de la portada y de los servicios: rejilla de tarjetas (carrusel con scroll nativo en celular)."""
     if not arts:
         return ''
-    filas = ''.join(fila_articulo(a, depth, i + 1) for i, a in enumerate(arts))
+    filas = ''.join(fila_guia(a, depth, i + 1) for i, a in enumerate(arts))
     return f'''<!-- blog:relacionados -->
-<section class="">
-  <div class="wrap sec">
-    <div class="sec-head rv"><span class="kicker">{kicker}</span><h2>{titulo}</h2><p>{texto}</p></div>
-    <div><div class="rows rv">{filas}</div><p style="margin-top:30px"><a class="more" href="{r('/blog/', depth)}">Ver todas las guías {ARROW}</a></p></div>
+<section class="guides">
+  <div class="wrap">
+    <div class="split-head rv"><h2>{titulo}</h2><p>{texto}</p></div>
   </div>
+  <div class="gscroll rv" tabindex="0" role="region" aria-label="{titulo}"><div class="gcards">{filas}</div></div>
+  <div class="wrap"><p class="after"><a class="more" href="{r('/blog/', depth)}">Ver todas las guías {ARROW}</a></p></div>
 </section>
 <!-- /blog:relacionados -->'''
 
@@ -605,7 +612,7 @@ def actualizar_existente(rel_path, arts, slugs):
     s = re.sub(r'\n<script src="[^"]*motion\.js\?v=[^"]+" defer></script>', '', s)
     m = re.search(r'<script src="([^"]*)main\.js\?v=[^"]+" defer></script>', s)
     if m:
-        gs = GSAP_TAGS if rel_path in ('index.html', 'sobre-mi/index.html') else ''
+        gs = GSAP_TAGS if rel_path in ('index.html', 'sobre-mi/index.html') or rel_path.startswith('servicios/') else ''
         s = s[:m.end()] + '\n' + gs + f'<script src="{m.group(1)}motion.js?v={CSS_V}" defer></script>' + s[m.end():]
     if 'og:image:width' not in s:
         s = s.replace('<meta name="twitter:card"', '<meta property="og:image:width" content="1200">\n<meta property="og:image:height" content="630">\n<meta property="og:image:alt" content="Sebastián Rincón Peña, trafficker en Meta Ads y Google Ads">\n<meta name="twitter:card"', 1)
