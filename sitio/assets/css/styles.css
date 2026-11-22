@@ -1014,3 +1014,7 @@ h1[style*="font-size"]{font-size:clamp(2.1rem,3.6vw,3.2rem)!important;line-heigh
 .split-head{margin-bottom:28px}
 .author-box{margin-top:44px;padding-top:28px}
 @media (max-width:560px){.art-sec{padding:36px 0 44px}}
+/* Sobre mí: texto centrado junto a la foto, sin hueco arriba */
+.page-hero .hero-grid{align-items:center!important;gap:56px}
+.page-hero .portrait{max-width:380px;justify-self:end;width:100%}
+@media (max-width:860px){.page-hero .portrait{justify-self:start;max-width:320px}}
