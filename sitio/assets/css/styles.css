@@ -490,3 +490,43 @@ input:focus,select:focus,textarea:focus{border-bottom-width:2px}
   .toc-m .toc ol{border-top:0}
 }
 .h1-sub{display:block;font-size:.4em;line-height:1.15;color:#C9C5BD;font-weight:500;margin-top:16px}
+/* ---------- Movimiento (pegar al final de styles.css) ---------- */
+/* Red de seguridad: si main.js no corre en 2.5 s, todo aparece */
+@keyframes rv-failsafe{to{opacity:1;transform:none;clip-path:inset(0 0 0 0)}}
+.js:not(.motion-ready) .rv,.js:not(.motion-ready) .rv .row,.js:not(.motion-ready) .rv li,.js:not(.motion-ready) .rv tbody tr,.js:not(.motion-ready) .portrait .frame,.js:not(.motion-ready) .portrait img{animation:rv-failsafe .4s 2.5s forwards}
+
+/* Lo que está en el primer pantallazo no espera a JS: entra con CSS al pintar */
+@keyframes frame-in{to{clip-path:inset(0 0 0 0)}}
+@keyframes img-in{to{transform:none}}
+.js .hero .portrait .frame,.js .page-hero .portrait .frame{transition:none;animation:frame-in .9s var(--ease) .1s forwards}
+.js .hero .portrait img,.js .page-hero .portrait img{transition:filter .6s var(--ease);animation:img-in 1.3s var(--ease) .1s forwards}
+.js .page-hero .rv{transition:none;animation:up .8s var(--ease) .05s forwards}
+
+/* Objetivo del parallax GSAP (el <img> conserva su animación CSS) */
+.hero .portrait picture,.page-hero .portrait picture{display:block;height:100%;will-change:transform}
+
+/* Escalonados que faltaban */
+.js .team.rv li,.js .table.rv tbody tr{opacity:0;transform:translateY(14px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.js .team.rv.in li,.js .table.rv.in tbody tr{opacity:1;transform:none}
+.js .table.rv tbody tr:nth-child(2){transition-delay:.08s}
+.js .table.rv tbody tr:nth-child(3){transition-delay:.16s}
+.js .table.rv tbody tr:nth-child(n+4){transition-delay:.24s}
+
+/* Cierre: el subrayado dorado del teléfono se dibuja al aparecer */
+.js .closing .rv.in .ulink{background-size:100% 1px;transition-delay:.45s}
+
+/* Artículos: barra de lectura e índice activo */
+.read-progress{position:fixed;left:0;right:0;top:0;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:0 50%;z-index:51;pointer-events:none}
+.toc a{position:relative;transition:color .25s}
+.toc a::after{content:"";position:absolute;left:-14px;top:12px;bottom:12px;width:2px;background:var(--gold);transform:scaleY(0);transition:transform .3s var(--ease)}
+.toc a[aria-current="true"]{color:var(--text)}
+.toc a[aria-current="true"]::after{transform:none}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js .team.rv li,.js .table.rv tbody tr,.js .page-hero .rv{opacity:1!important;transform:none!important}
+  .js .portrait .frame{clip-path:none!important}
+  .js .portrait img{transform:none!important}
+  .logo-row{width:auto;flex-wrap:wrap;gap:24px 44px}
+  .logo-row img[alt=""]{display:none}
+}

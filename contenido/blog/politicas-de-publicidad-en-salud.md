@@ -18,7 +18,7 @@ Una advertencia antes de seguir: estas políticas cambian seguido y su aplicaci�
 
 ### Atributos personales: el error más frecuente
 
-Meta no permite anuncios que afirmen o insinúen atributos personales del usuario, y las condiciones de salud física o mental están incluidas. Es la causa número uno de rechazos que veo en cuentas de clínicas.
+Meta no permite anuncios que [afirmen o insinúen atributos personales del usuario](https://transparency.meta.com/policies/ad-standards/objectionable-content/privacy-violations-personal-attributes/), y las condiciones de salud física o mental están incluidas. Es la causa número uno de rechazos que veo en cuentas de clínicas.
 
 | No permitido (ejemplo) | Alternativa más segura |
 |---|---|
@@ -31,7 +31,7 @@ La regla práctica: habla del servicio, del procedimiento o del resultado genera
 
 ### Antes y después: restringido y con matices
 
-Las normas de Meta sobre salud y bienestar restringen las imágenes de transformación de antes y después en procedimientos, cirugías y productos estéticos, y su propio ejemplo de contenido no permitido es una foto de antes y después de pérdida de peso. Hay interpretaciones de terceros que dicen que en procedimientos estéticos generales se aceptan ciertas comparaciones, pero no lo he podido confirmar en la política oficial. Mi recomendación: no construyas tu estrategia sobre antes y después en Meta. Si lo usas, asume el riesgo de rechazo.
+Las [normas de Meta sobre salud y bienestar](https://transparency.meta.com/policies/ad-standards/restricted-goods-services/health-wellness/) restringen las imágenes de transformación de antes y después en procedimientos, cirugías y productos estéticos, y su propio ejemplo de contenido no permitido es una foto de antes y después de pérdida de peso. Hay interpretaciones de terceros que dicen que en procedimientos estéticos generales se aceptan ciertas comparaciones, pero no lo he podido confirmar en la política oficial. Mi recomendación: no construyas tu estrategia sobre antes y después en Meta. Si lo usas, asume el riesgo de rechazo.
 
 Tampoco funcionan bien las imágenes que resaltan partes del cuerpo de forma negativa o que generan una autopercepción negativa (zoom a una barriga, a una arruga, a un rollito).
 
@@ -64,7 +64,7 @@ Google solo permite que los fabricantes promocionen medicamentos con receta en m
 
 ### Certificación para servicios de salud
 
-Google exige certificación para varias categorías: farmacias en línea, servicios que prescriben medicamentos, y en algunos países otros servicios como tratamientos de adicciones. Para farmacias en línea, además, suele pedir acreditaciones de terceros antes de certificarte. La lista de países y categorías cambia, así que confírmala en la política de "Atención médica y medicamentos" antes de invertir.
+Google exige certificación para varias categorías: farmacias en línea, servicios que prescriben medicamentos, y en algunos países otros servicios como tratamientos de adicciones. Para farmacias en línea, además, suele pedir acreditaciones de terceros antes de certificarte. La lista de países y categorías cambia, así que confírmala en la [política de "Atención médica y medicamentos" de Google](https://support.google.com/adspolicy/answer/176031?hl=es) antes de invertir.
 
 Para una clínica que ofrece consultas, cirugías o tratamientos estéticos, normalmente no se necesita certificación, siempre que no promociones medicamentos restringidos. Pero cuidado con las palabras clave: un término de medicamento puede limitar o rechazar el anuncio.
 

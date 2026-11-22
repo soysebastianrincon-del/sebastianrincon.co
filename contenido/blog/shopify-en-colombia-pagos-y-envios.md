@@ -16,7 +16,7 @@ Te lo cuento desde la práctica. Además de montar tiendas para clientes de Sinc
 
 ## Pagos en Shopify Colombia: cómo funcionan sin Shopify Payments
 
-En los países donde existe, Shopify Payments es la pasarela propia de Shopify: el cliente paga dentro del checkout y Shopify no cobra comisión extra. En Colombia no está, así que tienes que conectar un proveedor externo.
+En los países donde existe, Shopify Payments es la pasarela propia de Shopify: el cliente paga dentro del checkout y Shopify no cobra comisión extra. En Colombia no está (puedes verificarlo en la [lista de países de Shopify Payments](https://help.shopify.com/en/manual/payments/shopify-payments/supported-countries)), así que tienes que conectar un proveedor externo.
 
 Las consecuencias prácticas son estas:
 
@@ -49,7 +49,7 @@ Mi criterio, en este orden:
 
 ### Pagos manuales: contraentrega y transferencia
 
-Shopify permite crear métodos de pago manuales, como "Pago contraentrega" o "Transferencia bancaria". El pedido queda pendiente de pago y tú lo marcas como pagado cuando recibes la plata.
+Shopify permite crear [métodos de pago manuales](https://help.shopify.com/en/manual/payments/manual-payments), como "Pago contraentrega" o "Transferencia bancaria". El pedido queda pendiente de pago y tú lo marcas como pagado cuando recibes la plata.
 
 La contraentrega sube la conversión en categorías donde el cliente desconfía de pagar por adelantado, pero trae devoluciones y pedidos que nadie recibe. Si la ofreces, confirma cada pedido por WhatsApp antes de despacharlo y evalúa limitarla por zona o por valor del pedido.
 
@@ -96,7 +96,7 @@ En Cumbre Café, por ejemplo, despachar café a toda Colombia obliga a pensar en
 
 ## Facturación electrónica DIAN desde Shopify
 
-Si estás obligado a facturar electrónicamente, Shopify por sí solo **no emite la factura electrónica ante la DIAN**. La forma habitual de resolverlo es una app que conecte Shopify con tu software de facturación.
+Si estás obligado a facturar electrónicamente (la DIAN explica quiénes lo están en [Ser facturador electrónico](https://www.dian.gov.co/impuestos/factura-electronica/como-hacerlo/Paginas/ser-facturador-electronico.aspx)), Shopify por sí solo **no emite la factura electrónica ante la DIAN**. La forma habitual de resolverlo es una app que conecte Shopify con tu software de facturación.
 
 A noviembre de 2026, en la tienda de apps de Shopify hay integraciones con **Siigo** y **Alegra**, y otros proveedores colombianos que convierten los pedidos en facturas electrónicas y, en algunos casos, generan notas crédito cuando hay reembolsos. Los planes van desde opciones gratuitas hasta unos pocos dólares al mes, según el volumen de documentos.
 

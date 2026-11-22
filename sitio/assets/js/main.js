@@ -38,6 +38,7 @@
       });
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
     items.forEach(function (el) { io.observe(el); });
+    if (performance.now() < 2400) document.documentElement.classList.add('motion-ready');
   } else {
     items.forEach(function (el) { el.classList.add('in'); });
   }

@@ -26,8 +26,9 @@ CONTENIDO = os.path.join(BASE, 'contenido', 'blog')
 DOM = 'https://sebastianrincon.co'
 HOY = datetime.date.today().isoformat()
 import hashlib
-CSS_V = hashlib.md5(b''.join(open(os.path.join(SITIO, 'assets', x), 'rb').read() for x in ('css/styles.css', 'js/main.js'))).hexdigest()[:10]
+CSS_V = hashlib.md5(b''.join(open(os.path.join(SITIO, 'assets', x), 'rb').read() for x in ('css/styles.css', 'js/main.js', 'js/motion.js'))).hexdigest()[:10]
 
+GSAP_TAGS = '<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js" defer></script>\n<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js" defer></script>\n'
 WA_TXT = 'Hola%20Sebasti%C3%A1n%2C%20vi%20tu%20web%20y%20quiero%20informaci%C3%B3n%20sobre%20pauta%20para%20mi%20empresa%2E'
 WA = f'https://wa.me/573013291994?text={WA_TXT}'
 ARROW = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg>'
@@ -254,6 +255,7 @@ def head(depth, titulo, desc, url, graph, og_type='website', extra=''):
 def tail(depth):
     return f'''{WA_FLOAT}
 <script src="{r('/assets/js/main.js', depth)}?v={CSS_V}" defer></script>
+<script src="{r('/assets/js/motion.js', depth)}?v={CSS_V}" defer></script>
 </body>
 </html>
 '''
@@ -599,6 +601,12 @@ def actualizar_existente(rel_path, arts, slugs):
     s = re.sub(r'<footer>.*?</footer>', lambda m: footer(depth, slugs), s, count=1, flags=re.S)
     s = re.sub(r'styles\.css\?v=[^"]+', f'styles.css?v={CSS_V}', s)
     s = re.sub(r'main\.js\?v=[^"]+', f'main.js?v={CSS_V}', s)
+    s = re.sub(r'\n<script src="https://cdn\.jsdelivr\.net/npm/gsap@[^"]+" defer></script>', '', s)
+    s = re.sub(r'\n<script src="[^"]*motion\.js\?v=[^"]+" defer></script>', '', s)
+    m = re.search(r'<script src="([^"]*)main\.js\?v=[^"]+" defer></script>', s)
+    if m:
+        gs = GSAP_TAGS if rel_path in ('index.html', 'sobre-mi/index.html') else ''
+        s = s[:m.end()] + '\n' + gs + f'<script src="{m.group(1)}motion.js?v={CSS_V}" defer></script>' + s[m.end():]
     if 'og:image:width' not in s:
         s = s.replace('<meta name="twitter:card"', '<meta property="og:image:width" content="1200">\n<meta property="og:image:height" content="630">\n<meta property="og:image:alt" content="Sebastián Rincón Peña, trafficker en Meta Ads y Google Ads">\n<meta name="twitter:card"', 1)
     if 'application/rss+xml' not in s and '<link rel="preconnect"' in s:

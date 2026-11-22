@@ -33,7 +33,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Roboto:wdth,wght@75..100,400..700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../assets/css/styles.css?v=d82f0c4af1">
+<link rel="stylesheet" href="../../assets/css/styles.css?v=fd4f7cf93d">
 <script>document.documentElement.classList.add('js')</script>
 <script type="application/ld+json">
 {
@@ -51,7 +51,7 @@
       "inLanguage": "es-CO",
       "articleSection": "Shopify",
       "keywords": "Shopify en Colombia",
-      "wordCount": 1807,
+      "wordCount": 1862,
       "image": "https://sebastianrincon.co/assets/img/og-sebastian-rincon.jpg",
       "author": {
         "@id": "https://sebastianrincon.co/#sebastian"
@@ -265,7 +265,7 @@
 <p>Para que una tienda Shopify en Colombia opere bien necesitas resolver cuatro cosas: con qué pasarela cobras (tarjeta, PSE, Nequi), cómo muestras los precios en pesos, cómo despachas (incluida la contraentrega) y cómo emites la factura electrónica ante la DIAN. Si una de las cuatro falla, pierdes ventas o te metes en un problema contable.</p>
 <p>Te lo cuento desde la práctica. Además de montar tiendas para clientes de Since, tengo la mía: Cumbre Café Gourmet, el café de especialidad de mi familia en Salamina, Caldas, vende en Shopify con envíos a toda Colombia. Lo que sigue es lo que hay que configurar y en qué orden.</p>
 <h2 id="pagos-en-shopify-colombia-como-funcionan-sin-shopify-payment">Pagos en Shopify Colombia: cómo funcionan sin Shopify Payments</h2>
-<p>En los países donde existe, Shopify Payments es la pasarela propia de Shopify: el cliente paga dentro del checkout y Shopify no cobra comisión extra. En Colombia no está, así que tienes que conectar un proveedor externo.</p>
+<p>En los países donde existe, Shopify Payments es la pasarela propia de Shopify: el cliente paga dentro del checkout y Shopify no cobra comisión extra. En Colombia no está (puedes verificarlo en la <a href="https://help.shopify.com/en/manual/payments/shopify-payments/supported-countries" target="_blank" rel="noopener">lista de países de Shopify Payments</a>), así que tienes que conectar un proveedor externo.</p>
 <p>Las consecuencias prácticas son estas:</p>
 <ul><li><strong>Pagas dos comisiones por venta</strong>: la de la pasarela y la de Shopify por usar una pasarela externa. La de Shopify depende del plan (aproximadamente 2 % en Basic, 1 % en Grow y menos en Advanced, a noviembre de 2026). Confírmala en Configuración &gt; Pagos de tu administrador.</li><li><strong>La experiencia de pago cambia según la pasarela</strong>. Algunas abren una ventana o redirigen al cliente a otra página para pagar. Otras permiten pagar con tarjeta sin salir del checkout. Cada salto extra es una oportunidad de que el cliente abandone.</li><li><strong>Los métodos locales dependen de la pasarela</strong>. PSE, Nequi, Daviplata, Bancolombia o pago en efectivo en puntos físicos no los da Shopify: los da el proveedor que conectes.</li></ul>
 <h3>Qué pasarelas de pago integran con Shopify en Colombia</h3>
@@ -276,7 +276,7 @@
 <p>Mi criterio, en este orden:</p>
 <ol><li><strong>Que el cliente pague con lo que ya usa.</strong> En Colombia eso es tarjeta, PSE y Nequi como mínimo. Si tu público es joven, Nequi y Daviplata pesan mucho.</li><li><strong>Que la experiencia tenga los menos pasos posibles.</strong> Prueba tú mismo una compra desde el celular. Si te pide crear una cuenta o te saca a otra página con otro diseño, tu cliente siente lo mismo.</li><li><strong>Que le pase el evento de compra correcto a Shopify.</strong> Si la pasarela no devuelve al cliente a la página de confirmación del pedido, la compra puede no registrarse bien en el píxel de Meta y en Google. Esto es crítico si vas a pautar.</li><li><strong>Comisión y tiempos de desembolso.</strong> Importan, pero después de lo anterior. Una pasarela un punto más barata que te hace perder ventas en el checkout sale cara.</li></ol>
 <h3>Pagos manuales: contraentrega y transferencia</h3>
-<p>Shopify permite crear métodos de pago manuales, como “Pago contraentrega” o “Transferencia bancaria”. El pedido queda pendiente de pago y tú lo marcas como pagado cuando recibes la plata.</p>
+<p>Shopify permite crear <a href="https://help.shopify.com/en/manual/payments/manual-payments" target="_blank" rel="noopener">métodos de pago manuales</a>, como “Pago contraentrega” o “Transferencia bancaria”. El pedido queda pendiente de pago y tú lo marcas como pagado cuando recibes la plata.</p>
 <p>La contraentrega sube la conversión en categorías donde el cliente desconfía de pagar por adelantado, pero trae devoluciones y pedidos que nadie recibe. Si la ofreces, confirma cada pedido por WhatsApp antes de despacharlo y evalúa limitarla por zona o por valor del pedido.</p>
 <h2 id="precios-en-pesos-colombianos">Precios en pesos colombianos</h2>
 <p>Configura la <strong>moneda de la tienda en pesos colombianos (COP)</strong> desde el inicio. Cambiarla después de tener pedidos es más complicado y puede afectar reportes.</p>
@@ -298,7 +298,7 @@
 <ul><li><strong>Tiempos de entrega claros</strong> en la página de producto y en el checkout: ciudades principales y municipios no son lo mismo.</li><li><strong>Umbral de envío gratis</strong> solo si tu margen lo soporta. Calcúlalo así: supongamos que el envío promedio te cuesta $15.000 y tu ticket promedio es $90.000. Si pones envío gratis desde $120.000, empujas al cliente a agregar algo más y el envío se paga con ese margen extra.</li><li><strong>Peso de cada producto</strong> bien cargado, si usas tarifas calculadas.</li><li><strong>Notificaciones de seguimiento</strong>: por correo o WhatsApp. Un cliente que sabe dónde está su pedido no te escribe diez veces.</li></ul>
 <p>En Cumbre Café, por ejemplo, despachar café a toda Colombia obliga a pensar en empaque y tiempos de entrega, porque el producto llega a ciudades grandes y a municipios pequeños. Ese tipo de decisión no te la resuelve ninguna app: la defines tú según tu producto.</p>
 <h2 id="facturacion-electronica-dian-desde-shopify">Facturación electrónica DIAN desde Shopify</h2>
-<p>Si estás obligado a facturar electrónicamente, Shopify por sí solo <strong>no emite la factura electrónica ante la DIAN</strong>. La forma habitual de resolverlo es una app que conecte Shopify con tu software de facturación.</p>
+<p>Si estás obligado a facturar electrónicamente (la DIAN explica quiénes lo están en <a href="https://www.dian.gov.co/impuestos/factura-electronica/como-hacerlo/Paginas/ser-facturador-electronico.aspx" target="_blank" rel="noopener">Ser facturador electrónico</a>), Shopify por sí solo <strong>no emite la factura electrónica ante la DIAN</strong>. La forma habitual de resolverlo es una app que conecte Shopify con tu software de facturación.</p>
 <p>A noviembre de 2026, en la tienda de apps de Shopify hay integraciones con <strong>Siigo</strong> y <strong>Alegra</strong>, y otros proveedores colombianos que convierten los pedidos en facturas electrónicas y, en algunos casos, generan notas crédito cuando hay reembolsos. Los planes van desde opciones gratuitas hasta unos pocos dólares al mes, según el volumen de documentos.</p>
 <p>Antes de elegir:</p>
 <ol><li>Pregúntale a tu contador qué software usa o recomienda. La integración tiene que llegar a donde él trabaja.</li><li>Revisa si la app factura automáticamente al pagarse el pedido o si tienes que darle un botón.</li><li>Confirma cómo maneja devoluciones, descuentos y pedidos contraentrega.</li><li>Pide al cliente los datos de facturación en el checkout (tipo y número de documento) si los necesitas. Algunas apps agregan esos campos.</li></ol>
@@ -363,6 +363,7 @@
 </footer>
 
 <a class="wa-float" href="https://wa.me/573013291994?text=Hola%20Sebasti%C3%A1n%2C%20le%C3%AD%20tu%20gu%C3%ADa%20%22Shopify%20en%20Colombia%3A%20pagos%2C%20pesos%2C%20env%C3%ADos%20y%20facturaci%C3%B3n%22.%20Vendo%20___%20y%20quiero%20que%20revises%20mi%20caso." target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></svg></a>
-<script src="../../assets/js/main.js?v=d82f0c4af1" defer></script>
+<script src="../../assets/js/main.js?v=fd4f7cf93d" defer></script>
+<script src="../../assets/js/motion.js?v=fd4f7cf93d" defer></script>
 </body>
 </html>
