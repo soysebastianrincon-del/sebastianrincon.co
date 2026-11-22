@@ -489,3 +489,4 @@ input:focus,select:focus,textarea:focus{border-bottom-width:2px}
   .toc-m .toc h2{display:none}
   .toc-m .toc ol{border-top:0}
 }
+.h1-sub{display:block;font-size:.4em;line-height:1.15;color:#C9C5BD;font-weight:500;margin-top:16px}

@@ -25,7 +25,8 @@ SITIO = os.path.join(BASE, 'sitio')
 CONTENIDO = os.path.join(BASE, 'contenido', 'blog')
 DOM = 'https://sebastianrincon.co'
 HOY = datetime.date.today().isoformat()
-CSS_V = '202611220900'
+import hashlib
+CSS_V = hashlib.md5(b''.join(open(os.path.join(SITIO, 'assets', x), 'rb').read() for x in ('css/styles.css', 'js/main.js'))).hexdigest()[:10]
 
 WA_TXT = 'Hola%20Sebasti%C3%A1n%2C%20vi%20tu%20web%20y%20quiero%20informaci%C3%B3n%20sobre%20pauta%20para%20mi%20empresa%2E'
 WA = f'https://wa.me/573013291994?text={WA_TXT}'
@@ -67,7 +68,7 @@ PERSON = {
     "@type": "Person",
     "@id": f"{DOM}/#sebastian",
     "name": "Sebastián Rincón Peña",
-    "alternateName": ["Sebastián Rincón", "Sebastian Rincon", "Sebastian Rincon Peña", "Sebastián Rincón trafficker"],
+    "alternateName": ["Sebastián Rincón", "Sebastian Rincon", "Sebastian Rincon Peña"],
     "givenName": "Sebastián",
     "familyName": "Rincón Peña",
     "url": f"{DOM}/",
@@ -231,12 +232,9 @@ def head(depth, titulo, desc, url, graph, og_type='website', extra=''):
 <meta property="og:image:alt" content="Sebastián Rincón Peña, trafficker en Meta Ads y Google Ads">
 {extra}<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0B0B0B">
-<script async src="https://www.googletagmanager.com/gtm.js?id=GTM-55NCQQNH"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){{dataLayer.push(arguments);}}
-  gtag('js', new Date());
-</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){{w[l]=w[l]||[];w[l].push({{'gtm.start':new Date().getTime(),event:'gtm.js'}});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);}})(window,document,'script','dataLayer','GTM-55NCQQNH');</script>
+<!-- End Google Tag Manager -->
 <link rel="icon" type="image/png" href="{r('/assets/img/marca/favicon.png', depth)}">
 <link rel="apple-touch-icon" href="{r('/assets/img/marca/apple-touch-icon.png', depth)}">
 <link rel="alternate" type="application/rss+xml" title="Blog de Sebastián Rincón" href="{DOM}/blog/feed.xml">
@@ -249,7 +247,8 @@ def head(depth, titulo, desc, url, graph, og_type='website', extra=''):
 {ld}
 </script>
 </head>
-<body>'''
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-55NCQQNH" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>'''
 
 
 def tail(depth):
@@ -440,7 +439,7 @@ def pagina_articulo(a, todos, slugs):
     ]
     if faqs:
         graph.append({"@type": "FAQPage", "@id": f"{DOM}{url}#faq", "mainEntity": [
-            {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": ' '.join(re.sub(r'\[([^\]]+)\]\([^)]+\)', r'\1', p).replace('**', '') for p in ps)}}
+            {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": ' '.join(p.strip() for p in (re.sub(r'\[([^\]]+)\]\([^)]+\)', r'\1', p).replace('**', '') for p in ps))}}
             for q, ps in faqs]})
     seo = a.get('seo_titulo') or a['titulo']
     titulo_tag = f"{seo} | Sebastián Rincón"
@@ -598,8 +597,8 @@ def actualizar_existente(rel_path, arts, slugs):
     url = url_de(rel_path)
     s = re.sub(r'<nav class="nav".*?</nav>', lambda m: nav(depth, url), s, count=1, flags=re.S)
     s = re.sub(r'<footer>.*?</footer>', lambda m: footer(depth, slugs), s, count=1, flags=re.S)
-    s = re.sub(r'styles\.css\?v=\d+', f'styles.css?v={CSS_V}', s)
-    s = re.sub(r'main\.js\?v=\d+', f'main.js?v={CSS_V}', s)
+    s = re.sub(r'styles\.css\?v=[^"]+', f'styles.css?v={CSS_V}', s)
+    s = re.sub(r'main\.js\?v=[^"]+', f'main.js?v={CSS_V}', s)
     if 'og:image:width' not in s:
         s = s.replace('<meta name="twitter:card"', '<meta property="og:image:width" content="1200">\n<meta property="og:image:height" content="630">\n<meta property="og:image:alt" content="Sebastián Rincón Peña, trafficker en Meta Ads y Google Ads">\n<meta name="twitter:card"', 1)
     if 'application/rss+xml' not in s and '<link rel="preconnect"' in s:
@@ -633,6 +632,15 @@ def actualizar_existente(rel_path, arts, slugs):
 
 
 # ---------------------------------------------------------------- sitemap, llms, feed
+def fecha_git(path):
+    import subprocess
+    try:
+        d = subprocess.run(['git', 'log', '-1', '--format=%cs', '--', path], cwd=BASE, capture_output=True, text=True).stdout.strip()
+    except Exception:
+        d = ''
+    return d or HOY
+
+
 def sitemap(arts):
     fechas = {f'/blog/{a["slug"]}/': a['actualizado'] for a in arts}
     urls = []
@@ -650,7 +658,7 @@ def sitemap(arts):
             pr = '0.7'
         else:
             pr = '0.6'
-        urls.append(f'  <url><loc>{DOM}{u}</loc><lastmod>{fechas.get(u, HOY)}</lastmod><priority>{pr}</priority></url>')
+        urls.append(f'  <url><loc>{DOM}{u}</loc><lastmod>{fechas.get(u) or fecha_git(f)}</lastmod></url>')
     x = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + '\n'.join(urls) + '\n</urlset>\n'
     open(os.path.join(SITIO, 'sitemap.xml'), 'w', encoding='utf-8').write(x)
     return len(urls)
@@ -762,6 +770,9 @@ def main():
             continue
         actualizar_existente(rel, arts, slugs)
     personalizar_whatsapp(arts)
+    p404 = os.path.join(SITIO, '404.html')
+    t404 = open(p404, encoding='utf-8').read()
+    open(p404, 'w', encoding='utf-8').write(re.sub(r'styles\.css\?v=[^"]+', f'styles.css?v={CSS_V}', t404))
     n = sitemap(arts)
     feed(arts)
     llms(arts)

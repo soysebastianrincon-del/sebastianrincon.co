@@ -45,15 +45,16 @@
   // Clics a WhatsApp e Instagram como eventos de Analytics
   document.addEventListener('click', function (e) {
     var a = e.target.closest && e.target.closest('a[href]');
-    if (!a || !window.gtag) return;
+    if (!a) return;
+    var dl = window.dataLayer = window.dataLayer || [];
     if (a.href.indexOf('wa.me') > -1) {
       var loc = a.classList.contains('wa-float') ? 'flotante' : a.classList.contains('nav-cta') ? 'menu' :
         a.closest('.hero, .page-hero') ? 'hero' : a.closest('.mid-cta') ? 'blog-medio' : a.closest('.art-cta') ? 'blog-final' :
         a.closest('.closing') ? 'cierre' : a.closest('footer') ? 'pie' : 'contenido';
-      gtag('event', 'click_whatsapp', { page: location.pathname, cta_location: loc });
-      gtag('event', 'generate_lead', { method: 'whatsapp', page: location.pathname, cta_location: loc });
+      dl.push({ event: 'click_whatsapp', page: location.pathname, cta_location: loc });
+      dl.push({ event: 'generate_lead', method: 'whatsapp', page: location.pathname, cta_location: loc });
     }
-    else if (a.href.indexOf('instagram.com') > -1) gtag('event', 'click_instagram', { page: location.pathname });
+    else if (a.href.indexOf('instagram.com') > -1) dl.push({ event: 'click_instagram', page: location.pathname });
   });
 
   // Formulario -> WhatsApp
@@ -65,7 +66,7 @@
       (f.get('empresa') ? ' de ' + f.get('empresa') : '') +
       (f.get('pais') ? ' (' + f.get('pais') + ')' : '') +
       '. Me interesa: ' + f.get('servicio') + '. ' + (f.get('mensaje') || '');
-    if (window.gtag) gtag('event', 'generate_lead', { form_name: 'contacto', servicio: f.get('servicio') });
+    (window.dataLayer = window.dataLayer || []).push({ event: 'generate_lead', form_name: 'contacto', servicio: f.get('servicio') });
     window.open('https://wa.me/' + WA + '?text=' + encodeURIComponent(msg.trim()), '_blank', 'noopener');
   });
 })();
