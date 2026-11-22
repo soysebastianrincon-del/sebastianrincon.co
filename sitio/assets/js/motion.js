@@ -37,7 +37,7 @@
   }
 
   /* ---------- 2. Video: se pausa si sale de pantalla ---------- */
-  if (hasIO) $$('.reel video, .hx-reel video').forEach(function (v) {
+  if (hasIO) $$('.reel video, .stmt-video video').forEach(function (v) {
     new IntersectionObserver(function (es) {
       if (!es[0].isIntersecting && !v.paused) v.pause();
     }, { threshold: 0.2 }).observe(v);
@@ -150,7 +150,6 @@
       var st = function () { return { trigger: hx, start: 'top top', end: 'bottom top', scrub: 0.5 }; };
       gsap.to('.hx-frame picture', { yPercent: 10, scale: 1.06, ease: 'none', scrollTrigger: st() });
       gsap.to('.hx-copy', { y: -70, ease: 'none', scrollTrigger: st() });
-      gsap.to('.hx-reel', { y: -150, ease: 'none', scrollTrigger: st() });
     }
 
     // 5d. Servicios: la caja "Es para ti si" sube un poco más rápido y la foto del

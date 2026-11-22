@@ -909,3 +909,10 @@ html{scrollbar-color:#3a3833 var(--ink)}
 }
 @media (max-width:560px){.proof-in{grid-template-columns:minmax(0,1fr)}.proof p:last-of-type{border-bottom:0}}
 @media (max-width:860px){.intro-frame{aspect-ratio:4/3}.intro-frame img{object-position:50% 30%}}
+
+/* Video en su propia sección (fuera del hero) */
+.stmt-has-video{grid-template-columns:minmax(0,320px) minmax(0,1fr);align-items:center}
+.stmt-video{margin:0}
+.stmt-video video{display:block;width:100%;height:auto;aspect-ratio:9/16;background:#000;border-top:3px solid var(--gold)}
+.stmt-has-video .stmt-figs{margin-bottom:34px}
+@media (max-width:1020px){.stmt-has-video{grid-template-columns:minmax(0,1fr)}.stmt-video video{max-width:340px}}
