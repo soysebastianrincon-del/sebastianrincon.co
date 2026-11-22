@@ -32,7 +32,7 @@
         if (!e.isIntersecting) return;
         var el = e.target;
         // filas escalonadas dentro de listas
-        el.querySelectorAll(':scope > .row, :scope > li').forEach(function (c, i) { c.style.transitionDelay = (i * 0.07) + 's'; });
+        el.querySelectorAll(':scope > .row, :scope > li, :scope > .bigrow, :scope > div, :scope > .gcards > .gcard, :scope > .team > li').forEach(function (c, i) { c.style.transitionDelay = Math.min(i * 0.08, 0.64) + 's'; });
         el.classList.add('in');
         io.unobserve(el);
       });
@@ -50,7 +50,7 @@
     var dl = window.dataLayer = window.dataLayer || [];
     if (a.href.indexOf('wa.me') > -1) {
       var loc = a.classList.contains('wa-float') ? 'flotante' : a.classList.contains('nav-cta') ? 'menu' :
-        a.closest('.hero, .page-hero') ? 'hero' : a.closest('.mid-cta') ? 'blog-medio' : a.closest('.art-cta') ? 'blog-final' :
+        a.closest('.hero, .page-hero, .hx, .svc-hero') ? 'hero' : a.closest('.mid-cta') ? 'blog-medio' : a.closest('.art-cta') ? 'blog-final' :
         a.closest('.closing') ? 'cierre' : a.closest('footer') ? 'pie' : 'contenido';
       dl.push({ event: 'click_whatsapp', page: location.pathname, cta_location: loc });
       dl.push({ event: 'generate_lead', method: 'whatsapp', page: location.pathname, cta_location: loc });

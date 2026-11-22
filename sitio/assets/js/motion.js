@@ -2,7 +2,7 @@
    motion.js — capa de movimiento progresiva (va después de main.js)
    - Nunca oculta contenido: las apariciones siguen en CSS + main.js.
    - Partes vanilla en todas las páginas; partes GSAP solo si gsap y
-     ScrollTrigger cargaron (inicio y sobre-mí). Si el CDN falla, no pasa nada.
+     ScrollTrigger cargaron (inicio, sobre-mí y servicios). Si el CDN falla, no pasa nada.
    ========================================================= */
 (function () {
   'use strict';
@@ -37,29 +37,34 @@
   }
 
   /* ---------- 2. Video: se pausa si sale de pantalla ---------- */
-  if (hasIO) $$('.reel video').forEach(function (v) {
+  if (hasIO) $$('.reel video, .stmt-video video').forEach(function (v) {
     new IntersectionObserver(function (es) {
       if (!es[0].isIntersecting && !v.paused) v.pause();
     }, { threshold: 0.2 }).observe(v);
   });
 
-  /* ---------- 3. Contadores del ledger (enteros >= 8, sin cero inicial) ---------- */
-  if (!reduce && hasIO && window.requestAnimationFrame) $$('.ledger .val').forEach(function (el) {
+  /* ---------- 3. Contadores: cifras del ledger, ROAS de los casos y cifras del video.
+     Admite separador de miles con punto (+25.000). El texto real está en el HTML
+     y se restaura al final. ---------- */
+  var fmt = function (n, dots) { var t = String(n); return dots ? t.replace(/\B(?=(\d{3})+(?!\d))/g, '.') : t; };
+  if (!reduce && hasIO && window.requestAnimationFrame) $$('.ledger .val, .figs .val, .score-n, .stmt-figs .count').forEach(function (el) {
     var txt = el.textContent.trim();
-    var m = /^(\D*)(\d{1,5})(\D*)$/.exec(txt);
+    var m = /^(\D*)(\d{1,3}(?:\.\d{3})+|\d{1,5})(\D*)$/.exec(txt);
     if (!m || (m[2].length > 1 && m[2].charAt(0) === '0')) return;
-    var n = parseInt(m[2], 10);
+    var dots = m[2].indexOf('.') > -1;
+    var n = parseInt(m[2].replace(/\./g, ''), 10);
     if (n < 8) return;
     var io = new IntersectionObserver(function (es) {
       if (!es[0].isIntersecting) return;
       io.disconnect();
+      el.style.display = 'inline-block';
       el.style.minWidth = el.getBoundingClientRect().width + 'px'; // sin saltos de maquetación
       el.setAttribute('aria-hidden', 'true');
-      var t0 = null, dur = 1400;
+      var t0 = null, dur = n > 999 ? 1800 : 1400;
       (function step(t) {
         if (t0 === null) t0 = t;
-        var p = Math.min((t - t0) / dur, 1), e = 1 - Math.pow(1 - p, 3); // easeOutCubic
-        el.textContent = m[1] + Math.round(n * e) + m[3];
+        var p = Math.min((t - t0) / dur, 1), e = 1 - Math.pow(1 - p, 4); // easeOutQuart
+        el.textContent = m[1] + fmt(Math.round(n * e), dots) + m[3];
         if (p < 1) requestAnimationFrame(step);
         else { el.textContent = txt; el.removeAttribute('aria-hidden'); }
       })(performance.now());
@@ -123,7 +128,7 @@
   }, function (ctx) {
     var c = ctx.conditions;
 
-    // 5a. Retrato del hero: deriva lenta dentro del marco (solo escritorio).
+    // 5a. Retrato del hero (sobre-mí): deriva lenta dentro del marco (solo escritorio).
     // Se anima <picture>, no <img>, para no pelear con la animación CSS de entrada.
     var pic = $('.hero .portrait picture') || $('.page-hero .portrait picture');
     var hero = pic && pic.closest('.hero, .page-hero');
@@ -132,13 +137,41 @@
         yPercent: 4, scale: 1.08, ease: 'none',
         scrollTrigger: { trigger: hero, start: 'top top', end: 'bottom top', scrub: 0.6 }
       });
-      // la columna de texto sube un poco más rápido: profundidad sutil
       var col = $('.hero-grid > div:first-child');
       if (col) gsap.to(col, {
         y: -40, ease: 'none',
         scrollTrigger: { trigger: hero, start: 'top top', end: 'bottom top', scrub: 0.6 }
       });
     }
+
+    // 5c. Hero de portada: tres planos (foto, texto, video) a distinta velocidad.
+    var hx = $('.hx');
+    if (c.desktop && hx) {
+      var st = function () { return { trigger: hx, start: 'top top', end: 'bottom top', scrub: 0.5 }; };
+      gsap.to('.hx-frame picture', { yPercent: 10, scale: 1.06, ease: 'none', scrollTrigger: st() });
+      gsap.to('.hx-copy', { y: -70, ease: 'none', scrollTrigger: st() });
+    }
+
+    // 5d. Servicios: la caja "Es para ti si" sube un poco más rápido y la foto del
+    // escritorio se acerca mientras se lee el texto de al lado.
+    var fit = $('.svc-hero .fit');
+    if (c.desktop && fit) gsap.to(fit, {
+      y: -60, ease: 'none',
+      scrollTrigger: { trigger: '.svc-hero', start: 'top top', end: 'bottom top', scrub: 0.5 }
+    });
+    var ip = $('.intro-frame img');
+    if (c.desktop && ip) gsap.fromTo(ip, { scale: 1.14 }, {
+      scale: 1, ease: 'none',
+      scrollTrigger: { trigger: '.intro-grid', start: 'top bottom', end: 'bottom 60%', scrub: 0.6 }
+    });
+
+    // 5e. Cifras enormes de los casos: entran con un leve desplazamiento lateral ligado al scroll.
+    if (c.desktop) $$('.score-v').forEach(function (el, i) {
+      gsap.fromTo(el, { xPercent: i % 2 ? 4 : 8 }, {
+        xPercent: 0, ease: 'none',
+        scrollTrigger: { trigger: el, start: 'top bottom', end: 'top 55%', scrub: 0.6 }
+      });
+    });
 
     // 5b. Marquesina: acelera con la velocidad del scroll y vuelve suave a su ritmo.
     var anim = row && row.getAnimations ? row.getAnimations()[0] : null;
