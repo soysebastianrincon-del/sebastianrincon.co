@@ -18,8 +18,8 @@ Te explico cómo la organizo, qué cambió con Advantage+ y cuándo sí vale la 
 
 Durante 2025 y 2026 Meta fue unificando la forma de crear campañas alrededor de Advantage+:
 
-- **Los objetivos siguen siendo seis:** reconocimiento, tráfico, interacción, clientes potenciales, promoción de la app y ventas.
-- **Advantage+ dejó de ser un tipo de campaña aparte.** Las antiguas campañas Advantage+ de compras se fueron retirando y hoy, a noviembre de 2026, las opciones automáticas de Advantage+ vienen activadas por defecto dentro del flujo normal de creación, sobre todo en ventas.
+- **Los [objetivos siguen siendo seis](https://www.facebook.com/business/help/1438417719786914):** reconocimiento, tráfico, interacción, clientes potenciales, promoción de la app y ventas.
+- **Advantage+ dejó de ser un tipo de campaña aparte.** Las antiguas campañas Advantage+ de compras [se fueron retirando](https://developers.facebook.com/blog/post/2025/06/03/advantage-plus-campaign-experience-for-sales-and-app/) y hoy, a noviembre de 2026, las opciones automáticas de Advantage+ vienen activadas por defecto dentro del flujo normal de creación, sobre todo en ventas.
 - **Públicos, ubicaciones y presupuesto automáticos** suelen venir encendidos de entrada. Algunos se pueden ajustar o apagar; otros, según el objetivo, quedan más limitados.
 
 Los nombres y opciones cambian seguido, así que confirma en tu administrador de anuncios qué controles tienes disponibles. La idea de fondo no cambia: Meta quiere que le des más libertad y mejores señales.
@@ -96,7 +96,7 @@ Probar es necesario, pero si cada prueba crea una campaña nueva, la cuenta se f
 
 ## Presupuesto por campaña o por conjunto
 
-Meta ofrece el presupuesto de la campaña Advantage (antes conocido como CBO), donde el sistema reparte el dinero entre conjuntos, y el presupuesto por conjunto, donde tú decides cuánto va a cada uno.
+Meta ofrece el [presupuesto de la campaña Advantage+](https://www.facebook.com/business/ads/meta-advantage-plus/budget) (antes conocido como CBO), donde el sistema reparte el dinero entre conjuntos, y el presupuesto por conjunto, donde tú decides cuánto va a cada uno.
 
 - **Presupuesto de campaña:** útil cuando tienes varios conjuntos parecidos y quieres que Meta mueva la plata hacia el que mejor rinde.
 - **Presupuesto por conjunto:** útil para pruebas, cuando quieres asegurar que cada variante reciba gasto suficiente.

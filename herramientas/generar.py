@@ -25,8 +25,10 @@ SITIO = os.path.join(BASE, 'sitio')
 CONTENIDO = os.path.join(BASE, 'contenido', 'blog')
 DOM = 'https://sebastianrincon.co'
 HOY = datetime.date.today().isoformat()
-CSS_V = '202611220900'
+import hashlib
+CSS_V = hashlib.md5(b''.join(open(os.path.join(SITIO, 'assets', x), 'rb').read() for x in ('css/styles.css', 'js/main.js', 'js/motion.js'))).hexdigest()[:10]
 
+GSAP_TAGS = '<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js" defer></script>\n<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js" defer></script>\n'
 WA_TXT = 'Hola%20Sebasti%C3%A1n%2C%20vi%20tu%20web%20y%20quiero%20informaci%C3%B3n%20sobre%20pauta%20para%20mi%20empresa%2E'
 WA = f'https://wa.me/573013291994?text={WA_TXT}'
 ARROW = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg>'
@@ -67,7 +69,7 @@ PERSON = {
     "@type": "Person",
     "@id": f"{DOM}/#sebastian",
     "name": "Sebastián Rincón Peña",
-    "alternateName": ["Sebastián Rincón", "Sebastian Rincon", "Sebastian Rincon Peña", "Sebastián Rincón trafficker"],
+    "alternateName": ["Sebastián Rincón", "Sebastian Rincon", "Sebastian Rincon Peña"],
     "givenName": "Sebastián",
     "familyName": "Rincón Peña",
     "url": f"{DOM}/",
@@ -140,11 +142,12 @@ def nav(depth, actual):
     sub = ''.join(f'<li>{a(u, t)}</li>' for u, t in SERVICIOS)
     serv_cur = ' aria-current="page"' if actual.startswith('/servicios/') else ''
     return f'''<nav class="nav" aria-label="Principal">
+  <a class="skip" href="#main">Saltar al contenido</a>
   <div class="wrap nav-in">
     <a href="{pref(depth)}" class="logo"><img class="logo-mark" src="{r('/assets/img/marca/sr-mark.png', depth)}" alt="" width="38" height="33"><span>Sebastián Rincón<small>Pauta digital · Embudos de venta</small></span></a>
-    <ul class="menu"><li>{a('/sobre-mi/', 'Sobre mí')}</li><li class="has-sub"><a href="{r('/servicios/', depth)}"{serv_cur}>Servicios</a><ul class="sub">{sub}</ul></li><li>{a('/resultados/', 'Resultados')}</li><li>{a('/blog/', 'Blog')}</li><li>{a('/emprendimientos/', 'Emprendimientos')}</li><li class="m-only">{a('/contacto/', 'Contacto')}</li></ul>
+    <ul class="menu" id="menu"><li>{a('/sobre-mi/', 'Sobre mí')}</li><li class="has-sub"><a href="{r('/servicios/', depth)}"{serv_cur}>Servicios</a><ul class="sub">{sub}</ul></li><li>{a('/resultados/', 'Resultados')}</li><li>{a('/blog/', 'Blog')}</li><li>{a('/emprendimientos/', 'Emprendimientos')}</li><li class="m-only">{a('/contacto/', 'Contacto')}</li></ul>
     <a href="{WA}" target="_blank" rel="noopener" class="btn btn-gold nav-cta">WhatsApp</a>
-    <button class="burger" aria-label="Abrir menú" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 8h18M3 16h18"/></svg></button>
+    <button class="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 8h18M3 16h18"/></svg></button>
   </div>
 </nav>'''
 
@@ -168,7 +171,7 @@ def footer(depth, slugs_existentes):
     <div class="foot-grid">
       <div>
         <a href="{pref(depth)}" class="logo"><img class="logo-mark" src="{r('/assets/img/marca/sr-mark.png', depth)}" alt="" width="38" height="33"><span>Sebastián Rincón<small>Pauta digital · Embudos de venta</small></span></a>
-        <p style="max-width:340px">Sebastián Rincón Peña, trafficker con 8 años invirtiendo en Meta Ads y Google Ads. Fundador de Since Agencia Marketing Digital. Colombia.</p>
+        <p class="foot-about">Sebastián Rincón Peña, trafficker con 8 años invirtiendo en Meta Ads y Google Ads. Fundador de Since Agencia Marketing Digital. Colombia.</p>
       </div>
       <div><h4>Servicios</h4><ul>{serv}</ul></div>
       <div><h4>Guías</h4><ul>{guias}</ul></div>
@@ -201,7 +204,7 @@ def closing(titulo='¿Revisamos tu cuenta?'):
       <a class="wa ulink" href="{WA}" target="_blank" rel="noopener">+57 301 329 1994</a>
       <div class="ctas"><a href="{WA}" target="_blank" rel="noopener" class="btn btn-gold">Escríbeme por WhatsApp {ARROW}</a><a href="https://www.instagram.com/soysebastianrincon/" target="_blank" rel="noopener" class="btn btn-line">Instagram</a></div>
     </div>
-    <p class="muted rv">Escríbeme con lo que vendes y lo que estás invirtiendo hoy. Te respondo yo, no un asistente.</p>
+    <p class="muted rv">Escríbeme con lo que vendes y lo que estás invirtiendo hoy. El primer mensaje lo leo y respondo yo.</p>
   </div>
 </section>'''
 
@@ -230,12 +233,9 @@ def head(depth, titulo, desc, url, graph, og_type='website', extra=''):
 <meta property="og:image:alt" content="Sebastián Rincón Peña, trafficker en Meta Ads y Google Ads">
 {extra}<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0B0B0B">
-<script async src="https://www.googletagmanager.com/gtm.js?id=GTM-55NCQQNH"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){{dataLayer.push(arguments);}}
-  gtag('js', new Date());
-</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){{w[l]=w[l]||[];w[l].push({{'gtm.start':new Date().getTime(),event:'gtm.js'}});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);}})(window,document,'script','dataLayer','GTM-55NCQQNH');</script>
+<!-- End Google Tag Manager -->
 <link rel="icon" type="image/png" href="{r('/assets/img/marca/favicon.png', depth)}">
 <link rel="apple-touch-icon" href="{r('/assets/img/marca/apple-touch-icon.png', depth)}">
 <link rel="alternate" type="application/rss+xml" title="Blog de Sebastián Rincón" href="{DOM}/blog/feed.xml">
@@ -248,12 +248,14 @@ def head(depth, titulo, desc, url, graph, og_type='website', extra=''):
 {ld}
 </script>
 </head>
-<body>'''
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-55NCQQNH" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>'''
 
 
 def tail(depth):
     return f'''{WA_FLOAT}
 <script src="{r('/assets/js/main.js', depth)}?v={CSS_V}" defer></script>
+<script src="{r('/assets/js/motion.js', depth)}?v={CSS_V}" defer></script>
 </body>
 </html>
 '''
@@ -285,6 +287,7 @@ def slugify(t):
 
 def inline(t, depth):
     t = esc(t).replace('&#x27;', "'")
+    t = re.sub(r'&quot;(.+?)&quot;', '“\\1”', t)
     t = re.sub(r'`([^`]+)`', r'<code>\1</code>', t)
     def link(m):
         txt, url = m.group(1), html.unescape(m.group(2))
@@ -411,6 +414,16 @@ def seccion_guias(arts, depth, kicker='Guías', titulo='Guías relacionadas', te
 
 
 # ---------------------------------------------------------------- páginas del blog
+def cta_medio(cuerpo):
+    """Inserta un llamado a WhatsApp antes del tercer H2 del artículo."""
+    pos = [m.start() for m in re.finditer(r'<h2 id=', cuerpo)]
+    if len(pos) < 3:
+        return cuerpo
+    box = (f'<aside class="mid-cta"><p><strong>¿No sabes cuál es tu número?</strong> Escríbeme qué vendes y cuánto inviertes, y lo revisamos juntos.</p>'
+           f'<a href="{WA}" target="_blank" rel="noopener" class="more">Escríbeme por WhatsApp {ARROW}</a></aside>\n')
+    return cuerpo[:pos[2]] + box + cuerpo[pos[2]:]
+
+
 def pagina_articulo(a, todos, slugs):
     depth = 2
     url = f'/blog/{a["slug"]}/'
@@ -428,7 +441,7 @@ def pagina_articulo(a, todos, slugs):
     ]
     if faqs:
         graph.append({"@type": "FAQPage", "@id": f"{DOM}{url}#faq", "mainEntity": [
-            {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": ' '.join(re.sub(r'\[([^\]]+)\]\([^)]+\)', r'\1', p).replace('**', '') for p in ps)}}
+            {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": ' '.join(p.strip() for p in (re.sub(r'\[([^\]]+)\]\([^)]+\)', r'\1', p).replace('**', '') for p in ps))}}
             for q, ps in faqs]})
     seo = a.get('seo_titulo') or a['titulo']
     titulo_tag = f"{seo} | Sebastián Rincón"
@@ -451,7 +464,7 @@ def pagina_articulo(a, todos, slugs):
     out = head(depth, titulo_tag, a['descripcion'], url, graph, og_type='article', extra=extra)
     out += '\n' + nav(depth, url) + f'''
 
-<main>
+<main id="main">
 <header class="page-hero art-hero">
   <div class="wrap">
     {crumbs_html(items, depth)}
@@ -467,12 +480,12 @@ def pagina_articulo(a, todos, slugs):
 <section class="art-sec">
   <div class="wrap art-grid">
     <aside class="art-side">
-      <nav class="toc" aria-label="Contenido del artículo"><h2>Contenido</h2><ol>{toc_html}</ol></nav>
+      <details class="toc-m" open><summary>Contenido del artículo</summary><nav class="toc" aria-label="Contenido del artículo"><h2>Contenido</h2><ol>{toc_html}</ol></nav></details>
       <div class="side-cta"><span class="kicker">Servicio</span><p><strong>{esc(serv_nombre)}</strong><br>¿Prefieres que lo haga por ti? Revisemos tu caso.</p><a class="more" href="{r(serv_url, depth)}">Ver servicio {ARROW}</a></div>
     </aside>
     <article class="article">
       <div class="tldr"><b>En corto</b><p>{inline(a.get('resumen', a['descripcion']), depth)}</p></div>
-{cuerpo}
+{cta_medio(cuerpo)}
       <div class="art-cta"><p><strong>¿Quieres que revise tu caso?</strong> Escríbeme por WhatsApp con lo que vendes y cuánto inviertes hoy, y te digo por dónde empezaría.</p><a href="{WA}" target="_blank" rel="noopener" class="btn btn-gold">Escríbeme por WhatsApp {ARROW}</a></div>
       {faq_html}
       <div class="author-box"><picture><source srcset="{pic}.webp" type="image/webp"><img src="{pic}.jpg" alt="Sebastián Rincón Peña" width="96" height="112" loading="lazy"></picture><div><span class="kicker">Sobre el autor</span><p><strong>Sebastián Rincón Peña</strong> es trafficker con 8 años haciendo pauta en Meta Ads y Google Ads y creando tiendas en Shopify. Fundó <a href="https://agenciasincemarketing.com" target="_blank" rel="noopener">Since Agencia Marketing Digital</a>, que ha acompañado a más de 100 empresas en Colombia y el exterior, y es cofundador de Medipro.</p><a class="more" href="{r('/sobre-mi/', depth)}">Conoce a Sebastián {ARROW}</a></div></div>
@@ -512,7 +525,7 @@ def pagina_lista(depth, url, titulo_tag, desc, h1, lead, items_crumbs, grupos, k
 '''
     out = head(depth, titulo_tag, desc, url, graph) + '\n' + nav(depth, url) + f'''
 
-<main>
+<main id="main">
 <header class="page-hero">
   <div class="wrap">
     {crumbs_html(items_crumbs, depth)}
@@ -586,13 +599,20 @@ def actualizar_existente(rel_path, arts, slugs):
     url = url_de(rel_path)
     s = re.sub(r'<nav class="nav".*?</nav>', lambda m: nav(depth, url), s, count=1, flags=re.S)
     s = re.sub(r'<footer>.*?</footer>', lambda m: footer(depth, slugs), s, count=1, flags=re.S)
-    s = re.sub(r'styles\.css\?v=\d+', f'styles.css?v={CSS_V}', s)
-    s = re.sub(r'main\.js\?v=\d+', f'main.js?v={CSS_V}', s)
+    s = re.sub(r'styles\.css\?v=[^"]+', f'styles.css?v={CSS_V}', s)
+    s = re.sub(r'main\.js\?v=[^"]+', f'main.js?v={CSS_V}', s)
+    s = re.sub(r'\n<script src="https://cdn\.jsdelivr\.net/npm/gsap@[^"]+" defer></script>', '', s)
+    s = re.sub(r'\n<script src="[^"]*motion\.js\?v=[^"]+" defer></script>', '', s)
+    m = re.search(r'<script src="([^"]*)main\.js\?v=[^"]+" defer></script>', s)
+    if m:
+        gs = GSAP_TAGS if rel_path in ('index.html', 'sobre-mi/index.html') else ''
+        s = s[:m.end()] + '\n' + gs + f'<script src="{m.group(1)}motion.js?v={CSS_V}" defer></script>' + s[m.end():]
     if 'og:image:width' not in s:
         s = s.replace('<meta name="twitter:card"', '<meta property="og:image:width" content="1200">\n<meta property="og:image:height" content="630">\n<meta property="og:image:alt" content="Sebastián Rincón Peña, trafficker en Meta Ads y Google Ads">\n<meta name="twitter:card"', 1)
     if 'application/rss+xml' not in s and '<link rel="preconnect"' in s:
         s = s.replace('<link rel="preconnect"', f'<link rel="alternate" type="application/rss+xml" title="Blog de Sebastián Rincón" href="{DOM}/blog/feed.xml">\n<link rel="preconnect"', 1)
     s = s.replace('content="index, follow, max-image-preview:large"', 'content="index, follow, max-image-preview:large, max-snippet:-1"')
+    s = s.replace('<main>', '<main id="main">', 1)
     s = actualizar_jsonld(s, rel_path)
     # bloque de guías relacionadas
     s = re.sub(r'\n?<!-- blog:relacionados -->.*?<!-- /blog:relacionados -->\n?', '\n', s, flags=re.S)
@@ -620,6 +640,15 @@ def actualizar_existente(rel_path, arts, slugs):
 
 
 # ---------------------------------------------------------------- sitemap, llms, feed
+def fecha_git(path):
+    import subprocess
+    try:
+        d = subprocess.run(['git', 'log', '-1', '--format=%cs', '--', path], cwd=BASE, capture_output=True, text=True).stdout.strip()
+    except Exception:
+        d = ''
+    return d or HOY
+
+
 def sitemap(arts):
     fechas = {f'/blog/{a["slug"]}/': a['actualizado'] for a in arts}
     urls = []
@@ -637,7 +666,7 @@ def sitemap(arts):
             pr = '0.7'
         else:
             pr = '0.6'
-        urls.append(f'  <url><loc>{DOM}{u}</loc><lastmod>{fechas.get(u, HOY)}</lastmod><priority>{pr}</priority></url>')
+        urls.append(f'  <url><loc>{DOM}{u}</loc><lastmod>{fechas.get(u) or fecha_git(f)}</lastmod></url>')
     x = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + '\n'.join(urls) + '\n</urlset>\n'
     open(os.path.join(SITIO, 'sitemap.xml'), 'w', encoding='utf-8').write(x)
     return len(urls)
@@ -748,12 +777,46 @@ def main():
         if rel in generadas:
             continue
         actualizar_existente(rel, arts, slugs)
+    personalizar_whatsapp(arts)
+    p404 = os.path.join(SITIO, '404.html')
+    t404 = open(p404, encoding='utf-8').read()
+    open(p404, 'w', encoding='utf-8').write(re.sub(r'styles\.css\?v=[^"]+', f'styles.css?v={CSS_V}', t404))
     n = sitemap(arts)
     feed(arts)
     llms(arts)
     print(f'{len(arts)} artículos, {n} URLs en el sitemap')
     for e in errores:
         print('AVISO:', e)
+
+
+# ---------------------------------------------------------------- mensajes de WhatsApp por página
+from urllib.parse import quote
+
+WA_MSGS = {
+    '/servicios/pauta-meta-ads/': 'Hola Sebastián, vengo de tu página de Meta Ads. Vendo ___ y quiero que revises mis campañas de Facebook e Instagram.',
+    '/servicios/pauta-google-ads/': 'Hola Sebastián, vengo de tu página de Google Ads. Vendo ___ y quiero que revises mis campañas en Google.',
+    '/servicios/tiendas-shopify/': 'Hola Sebastián, necesito una tienda Shopify para vender ___. ¿Hablamos?',
+    '/servicios/pauta-empresas-de-servicios/': 'Hola Sebastián, mi empresa vende ___ (servicio de alto valor) y quiero más clientes potenciales calificados. ¿Lo revisamos?',
+    '/servicios/publicidad-para-medicos-y-clinicas/': 'Hola Sebastián, soy médico/clínica de ___ (especialidad y ciudad). Me llegan mensajes pero pocos agendan. ¿Lo revisamos?',
+    '/resultados/': 'Hola Sebastián, vi tus resultados. Mi empresa vende ___ y quiero saber si mi caso aplica.',
+}
+WA_DEFECTO = 'Hola Sebastián, vengo de tu web. Vendo ___ y hoy invierto ___ al mes en pauta. Quiero que revises mi cuenta.'
+
+
+def personalizar_whatsapp(arts):
+    titulos = {f'/blog/{a["slug"]}/': a['titulo'] for a in arts}
+    for f in glob.glob(os.path.join(SITIO, '**', '*.html'), recursive=True):
+        rel = os.path.relpath(f, SITIO).replace(os.sep, '/')
+        u = url_de(rel)
+        if u in titulos:
+            msg = f'Hola Sebastián, leí tu guía "{titulos[u]}". Vendo ___ y quiero que revises mi caso.'
+        else:
+            msg = WA_MSGS.get(u, WA_DEFECTO)
+        txt = quote(msg, safe='')
+        s = open(f, encoding='utf-8').read()
+        n = re.sub(r'https://wa\.me/573013291994\?text=[^"\'\s<]*', 'https://wa.me/573013291994?text=' + txt, s)
+        if n != s:
+            open(f, 'w', encoding='utf-8').write(n)
 
 
 if __name__ == '__main__':

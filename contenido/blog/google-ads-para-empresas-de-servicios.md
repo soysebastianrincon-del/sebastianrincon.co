@@ -140,6 +140,8 @@ Si tienes una empresa de servicios de alto valor y quieres que llevemos tu pauta
 
 ¿Te llegan clics pero no clientes? Escríbeme por WhatsApp. Revisamos tus términos de búsqueda, tus negativas y tu medición, y te digo qué cambiaría primero.
 
+Si tienes un consultorio o clínica, aquí te explico cómo trabajo la [publicidad para médicos y clínicas](/servicios/publicidad-para-medicos-y-clinicas/).
+
 ## Preguntas frecuentes
 
 ### ¿Qué tipo de campaña de Google Ads conviene para una empresa de servicios?

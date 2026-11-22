@@ -23,7 +23,7 @@ Una conversión es una acción valiosa que alguien hace después de interactuar 
 - Una cita agendada.
 - Una venta que se cerró después, por teléfono o en persona.
 
-Cada una se configura como una **acción de conversión**. Y aquí viene lo importante: cada acción puede ser **principal** o **secundaria**.
+Cada una se configura como una **acción de conversión**. Y aquí viene lo importante: cada acción puede ser **[principal o secundaria](https://support.google.com/google-ads/answer/11461796?hl=es)**.
 
 - **Principal:** cuenta en la columna de conversiones y se usa para optimizar las pujas.
 - **Secundaria:** se registra para que la puedas ver, pero no se usa para optimizar.
@@ -63,7 +63,7 @@ Hay dos usos:
 - **Para la web:** mejora la medición de compras y formularios en tu sitio.
 - **Para clientes potenciales:** captura el correo o teléfono del formulario para que después puedas decirle a Google qué contactos se convirtieron en clientes.
 
-Según Google, desde junio de 2026 las conversiones mejoradas para la web y para clientes potenciales se unificaron en un solo ajuste que se activa o desactiva, y las cuentas existentes se migraron de forma automática. Revisa en la configuración de conversiones de tu cuenta que esté activo.
+[Según Google](https://support.google.com/google-ads/answer/16884284?hl=es), desde junio de 2026 las conversiones mejoradas para la web y para clientes potenciales se unificaron en un solo ajuste que se activa o desactiva, y las cuentas existentes se migraron de forma automática. Revisa en la configuración de conversiones de tu cuenta que esté activo.
 
 Ojo con los datos personales: en Colombia rige la Ley 1581 de 2012 de protección de datos. Tu política de privacidad y tus formularios deben informar cómo usas la información.
 

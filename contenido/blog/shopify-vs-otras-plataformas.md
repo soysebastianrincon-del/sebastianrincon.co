@@ -28,7 +28,7 @@ Ahora vamos por partes.
 
 ## Shopify: lo que ganas y lo que pagas
 
-Shopify es una plataforma alojada. Tú no te preocupas por servidor, seguridad, copias de seguridad ni actualizaciones. Pagas un plan mensual en dólares (a noviembre de 2026, el plan Basic está alrededor de 39 USD al mes con pago mensual; verifica en la página de precios de Shopify).
+Shopify es una plataforma alojada. Tú no te preocupas por servidor, seguridad, copias de seguridad ni actualizaciones. Pagas un plan mensual en dólares (a noviembre de 2026, el plan Basic está alrededor de 39 USD al mes con pago mensual; verifica en la [página de precios de Shopify](https://www.shopify.com/pricing)).
 
 **Lo que ganas:**
 

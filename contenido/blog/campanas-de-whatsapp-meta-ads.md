@@ -112,6 +112,8 @@ En mi servicio de [trafficker de Meta Ads](/servicios/pauta-meta-ads/) trabajamo
 
 Si ya estás pautando a WhatsApp y sientes que llegan muchos mensajes pero pocas ventas, escríbeme por WhatsApp. Revisamos tu campaña y cómo están respondiendo tus chats.
 
+Si tienes un consultorio, clínica o centro de estética, aquí te explico cómo trabajo la [publicidad para médicos y clínicas](/servicios/publicidad-para-medicos-y-clinicas/).
+
 ## Preguntas frecuentes
 
 ### ¿Necesito WhatsApp Business para hacer anuncios a WhatsApp?

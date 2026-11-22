@@ -18,7 +18,7 @@ En esta guía te desgloso cada costo, cuáles son fijos y cuáles variables, y t
 
 Shopify cobra sus planes **en dólares**, no en pesos. Eso significa que lo que pagas en pesos sube o baja con la TRM y con el cargo que tu banco cobre por compras internacionales con tarjeta.
 
-A noviembre de 2026, los planes principales son estos (verifica en la página oficial de precios de Shopify antes de decidir):
+A noviembre de 2026, los planes principales son estos (verifica en la [página oficial de precios de Shopify](https://www.shopify.com/pricing) antes de decidir):
 
 | Plan | Pago mensual | Pago anual (por mes) | Para quién |
 |---|---|---|---|
@@ -37,10 +37,10 @@ El salto a Grow tiene sentido cuando la diferencia en comisiones por venta empie
 
 ## Las comisiones: el costo que casi nadie calcula
 
-Aquí está la parte que más sorprende. En Colombia, **Shopify Payments no está disponible** a noviembre de 2026. Eso tiene dos consecuencias:
+Aquí está la parte que más sorprende. En Colombia, **Shopify Payments no está disponible** a noviembre de 2026 (Colombia no aparece en la [lista de países donde funciona Shopify Payments](https://help.shopify.com/en/manual/payments/shopify-payments/supported-countries)). Eso tiene dos consecuencias:
 
 1. Tienes que cobrar con una pasarela de pago externa (Wompi, Mercado Pago, PayU, ePayco u otra que aparezca en tu administrador). Cada una cobra su propia comisión por transacción.
-2. Shopify te cobra **una comisión adicional por usar una pasarela externa**. Según el plan, va aproximadamente del 2 % en Basic al 1 % en Grow y menos del 1 % en Advanced. Revisa la cifra vigente en la sección de pagos de tu administrador.
+2. Shopify te cobra **una [comisión adicional por usar una pasarela externa](https://help.shopify.com/en/manual/your-account/manage-billing/billing-charges/types-of-charges/third-party-charges/third-party-transaction-fees)**. Según el plan, va aproximadamente del 2 % en Basic al 1 % en Grow y menos del 1 % en Advanced. Revisa la cifra vigente en la sección de pagos de tu administrador.
 
 Es decir: en cada venta pagas la comisión de la pasarela más la de Shopify. Si la pasarela cobra alrededor del 3 % y Shopify el 2 %, se te va cerca del 5 % de cada venta antes de contar el producto, el envío o la pauta.
 

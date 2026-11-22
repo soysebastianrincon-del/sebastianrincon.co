@@ -20,9 +20,9 @@ Antes de hablar de cifras, entiende cómo funciona el cobro:
 
 - **No hay mínimo.** Tú configuras un presupuesto diario promedio por campaña.
 - **Pagas por clic en búsqueda.** En las campañas de búsqueda pagas cuando alguien hace clic, no cuando ve el anuncio.
-- **El gasto diario puede variar.** Google puede gastar más de tu presupuesto diario en un día con buena demanda y menos en otro. A lo largo del mes, Google se compromete a no cobrarte más del presupuesto diario multiplicado por el número promedio de días del mes. Si pones $50.000 diarios, en un mes no deberías pagar más de unos $1.520.000.
+- **El gasto diario puede variar.** Google puede gastar más de tu presupuesto diario en un día con buena demanda y menos en otro. A lo largo del mes, Google se compromete a no cobrarte más del [presupuesto diario multiplicado por el número promedio de días del mes](https://support.google.com/google-ads/answer/6385083?hl=es) (30,4). Si pones $50.000 diarios, en un mes no deberías pagar más de unos $1.520.000.
 - **Es una subasta.** Cada vez que alguien busca, Google decide qué anuncios mostrar y en qué orden según tu oferta, la calidad de tu anuncio y la relevancia de tu página.
-- **Impuestos.** La publicidad digital que se compra a proveedores del exterior está gravada con IVA en Colombia. Cómo te aplica (si lo pagas en la factura o lo autoliquidas) depende de tu situación tributaria, así que revísalo con tu contador.
+- **Impuestos.** La publicidad digital que se compra a proveedores del exterior está gravada con IVA en Colombia (la DIAN lo explica en el [Oficio 910836 de 2021](https://normograma.dian.gov.co/dian/compilacion/docs/oficio_dian_910836_2021.htm)). Cómo te aplica (si lo pagas en la factura o lo autoliquidas) depende de tu situación tributaria, así que revísalo con tu contador.
 
 ## De qué depende el costo por clic en Colombia
 
@@ -50,7 +50,7 @@ En fechas como Black Friday, temporada escolar o diciembre, más empresas pujan 
 
 ## Cómo estimar el costo antes de invertir
 
-La herramienta oficial para esto es el **Planificador de palabras clave** de Google Ads. Es gratis dentro de tu cuenta. Le pones tus palabras clave y tu ubicación, y te muestra el volumen de búsqueda aproximado y un rango de oferta para la parte superior de la página.
+La herramienta oficial para esto es el **[Planificador de palabras clave](https://support.google.com/google-ads/answer/7337243?hl=es)** de Google Ads. Es gratis dentro de tu cuenta. Le pones tus palabras clave y tu ubicación, y te muestra el volumen de búsqueda aproximado y un rango de oferta para la parte superior de la página.
 
 Tómalo como referencia, no como promesa. Los rangos reales cambian cuando la campaña sale a la subasta. Pero te da una idea de si estás en un sector de clics de cientos de pesos o de miles de pesos.
 

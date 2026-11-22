@@ -119,6 +119,8 @@ En servicios de salud, por ejemplo, un asistente con IA que responde a las 11 de
 
 Si quieres que revisemos tu embudo etapa por etapa, escríbeme por WhatsApp. Te digo dónde se te está cayendo la gente y qué arreglaría primero.
 
+Si tienes un clínica o consultorio, aquí te explico cómo trabajo la [publicidad para médicos y clínicas](/servicios/publicidad-para-medicos-y-clinicas/).
+
 ## Preguntas frecuentes
 
 ### ¿Cuántas etapas debe tener un embudo para servicios high ticket?

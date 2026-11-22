@@ -128,6 +128,8 @@ En el equipo de Since los resultados que han reportado nuestros clientes van de 
 
 Si quieres calcular tu CPL objetivo con tus números reales, escríbeme por WhatsApp y lo revisamos juntos.
 
+Si tienes un clínica o consultorio, aquí te explico cómo trabajo la [publicidad para médicos y clínicas](/servicios/publicidad-para-medicos-y-clinicas/).
+
 ## Preguntas frecuentes
 
 ### ¿Cuál es un buen costo por cliente potencial?

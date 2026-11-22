@@ -129,6 +129,8 @@ En el equipo de Since, cada cliente tiene un trafficker asignado, y una parte de
 
 Si te llegan leads y no se convierten, escríbeme por WhatsApp. Revisamos tu cuenta y tu proceso, y te digo dónde está la fuga.
 
+Si tienes un clínica o consultorio, aquí te explico cómo trabajo la [publicidad para médicos y clínicas](/servicios/publicidad-para-medicos-y-clinicas/).
+
 ## Preguntas frecuentes
 
 ### ¿Es normal que la mayoría de leads no compren?

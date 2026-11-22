@@ -23,13 +23,13 @@ El catálogo es la lista de tus productos con sus datos: título, descripción, 
 - **Fichas gratuitas en Google**: con Merchant Center, tus productos pueden aparecer sin pagar en algunas superficies de Google.
 - **Etiquetar productos** en publicaciones y anuncios de Instagram y Facebook.
 
-A noviembre de 2026, Colombia aparece entre los países donde Google permite anuncios de Shopping y fichas gratuitas, con pesos colombianos como moneda. Verifica la lista vigente en la ayuda de Merchant Center antes de configurar.
+A noviembre de 2026, Colombia aparece entre los países donde Google permite anuncios de Shopping y fichas gratuitas, con pesos colombianos como moneda. Verifica la lista vigente en la [ayuda de Merchant Center sobre idiomas y monedas admitidos](https://support.google.com/merchants/answer/160637?hl=es) antes de configurar.
 
 ## Cómo conectar el catálogo de Shopify con Meta
 
 ### Paso a paso
 
-1. **Instala la app Facebook e Instagram** desde la tienda de apps de Shopify. La desarrolla Meta.
+1. **Instala la app Facebook e Instagram** desde la tienda de apps de Shopify. La desarrolla Meta, y Shopify explica cómo funciona en su [ayuda sobre el canal Facebook e Instagram](https://help.shopify.com/en/manual/online-sales-channels/social-commerce/facebook-instagram-by-meta).
 2. **Conecta tus activos**: cuenta de Facebook, Business Manager (portafolio comercial), página, cuenta de Instagram, cuenta publicitaria y píxel. Usa los activos de la empresa, no los de una cuenta personal que después no puedas recuperar.
 3. **Activa el uso compartido de datos** en el nivel más alto disponible. Así se activa el píxel y la API de conversiones desde Shopify.
 4. **Elige qué productos sincronizar**. Por defecto se sincronizan los productos disponibles en el canal. Puedes excluir los que no quieres anunciar.
@@ -46,7 +46,7 @@ A noviembre de 2026, Colombia aparece entre los países donde Google permite anu
 
 ### Paso a paso
 
-1. **Instala la app Google & YouTube** desde la tienda de apps de Shopify.
+1. **Instala la app Google & YouTube** desde la tienda de apps de Shopify (aquí está la [guía oficial para conectarla](https://help.shopify.com/en/manual/online-sales-channels/marketplaces/google/getting-setup/connect)).
 2. **Conecta tu cuenta de Google** y crea o vincula una cuenta de Merchant Center.
 3. **Verifica y reclama tu dominio** en Merchant Center. La app lo facilita.
 4. **Configura el país de venta en Colombia**, el idioma en español y la moneda en pesos.

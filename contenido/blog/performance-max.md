@@ -21,7 +21,7 @@ Una campaña clásica de búsqueda funciona con palabras clave: tú eliges las b
 - **Un objetivo de conversión.** Compras, clientes potenciales, llamadas, visitas a tienda. Es lo que la campaña intenta conseguir.
 - **Grupos de recursos.** Cada grupo tiene títulos, descripciones, imágenes, logos, videos y una URL final. Google arma los anuncios combinando esos recursos según el canal.
 - **Señales de audiencia.** Le sugieres a Google quién es tu cliente: tus listas de clientes, visitantes de tu web, intereses o búsquedas personalizadas. Son pistas, no una segmentación cerrada. Google puede salirse de ellas si encuentra conversiones en otro lado.
-- **Temas de búsqueda.** Frases que le indican a Google sobre qué búsquedas tiene sentido mostrarte. Hoy se pueden agregar hasta 50 por grupo de recursos.
+- **Temas de búsqueda.** Frases que le indican a Google sobre qué búsquedas tiene sentido mostrarte. Hoy se pueden agregar [hasta 50 por grupo de recursos](https://support.google.com/google-ads/answer/14767319?hl=es).
 - **Feed de productos.** Si tienes ecommerce, conectas tu catálogo a través de Google Merchant Center y Performance Max muestra tus productos en Shopping y otros canales.
 
 Con todo eso, Google puja en tiempo real en cada subasta para conseguirte la mayor cantidad de conversiones (o de valor de conversión) dentro de tu presupuesto.
@@ -61,7 +61,7 @@ La gran queja contra Performance Max siempre fue que era una caja negra. Google 
 |---|---|
 | Palabras clave negativas a nivel de campaña | Excluir búsquedas que no quieres en búsqueda y Shopping |
 | Listas compartidas de negativas | Aplicar las mismas exclusiones a varias campañas |
-| Exclusiones de marca | Evitar aparecer en búsquedas de tu marca o de otras marcas, incluso con errores de escritura |
+| [Exclusiones de marca](https://support.google.com/google-ads/answer/14505308?hl=es) | Evitar aparecer en búsquedas de tu marca o de otras marcas, incluso con errores de escritura |
 | Reporte de rendimiento por canal | Ver cuánto gasta y convierte en búsqueda, YouTube, Display y demás |
 | Reporte de términos de búsqueda | Ver qué búsquedas activaron tus anuncios |
 | Temas de búsqueda | Orientar a la campaña sobre qué búsquedas son relevantes |
@@ -74,7 +74,7 @@ Dos de estos los activo casi siempre:
 
 ### ¿Performance Max compite con mis campañas de búsqueda?
 
-Puede pasar que las dos quieran aparecer en la misma búsqueda. Según Google, cuando la búsqueda coincide con una palabra clave de tu campaña de búsqueda, esa campaña tiene prioridad sobre Performance Max. Por eso tiene sentido mantener una campaña de búsqueda con tus palabras clave más importantes y dejar que Performance Max busque volumen adicional.
+Puede pasar que las dos quieran aparecer en la misma búsqueda. [Según Google](https://support.google.com/google-ads/answer/13810170?hl=es), cuando la búsqueda es idéntica a una palabra clave elegible de tu campaña de búsqueda, esa campaña tiene prioridad sobre Performance Max. Por eso tiene sentido mantener una campaña de búsqueda con tus palabras clave más importantes y dejar que Performance Max busque volumen adicional.
 
 ## Cómo monto una campaña de Performance Max
 

@@ -2,3 +2,60 @@
 [build]
   publish = "sitio"
   command = ""
+
+# Una sola versión del dominio: sin www y siempre con https
+[[redirects]]
+  from = "https://www.sebastianrincon.co/*"
+  to = "https://sebastianrincon.co/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.sebastianrincon.co/*"
+  to = "https://sebastianrincon.co/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://sebastianrincon.netlify.app/*"
+  to = "https://sebastianrincon.co/:splat"
+  status = 301
+  force = true
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "SAMEORIGIN"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+[[headers]]
+  for = "/assets/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/assets/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/assets/img/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
+
+[[headers]]
+  for = "/assets/video/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
+
+[[headers]]
+  for = "/llms.txt"
+  [headers.values]
+    Content-Type = "text/plain; charset=utf-8"
+
+[[headers]]
+  for = "/blog/feed.xml"
+  [headers.values]
+    Content-Type = "application/rss+xml; charset=utf-8"

@@ -43,7 +43,7 @@ Ventajas principales:
 
 ## ¿Por qué usar el píxel y la API de conversiones juntos?
 
-Porque se complementan. El píxel captura bien el comportamiento en el navegador y la API de conversiones cubre lo que el píxel no alcanza. La recomendación de Meta es implementarlos en conjunto, lo que llama una configuración redundante.
+Porque se complementan. El píxel captura bien el comportamiento en el navegador y la API de conversiones cubre lo que el píxel no alcanza. La [recomendación de Meta](https://www.facebook.com/business/help/308855623839366) es implementarlos en conjunto, lo que llama una configuración redundante.
 
 | Aspecto | Píxel de Meta | API de conversiones |
 |---|---|---|
@@ -57,7 +57,7 @@ Porque se complementan. El píxel captura bien el comportamiento en el navegador
 
 Si envías la misma compra por el píxel y por la API, Meta la puede contar dos veces. Eso infla tu ROAS y le enseña al algoritmo datos falsos.
 
-Para evitarlo existe la deduplicación. Meta identifica que dos eventos son el mismo cuando tienen:
+Para evitarlo existe la [deduplicación](https://developers.facebook.com/documentation/ads-commerce/conversions-api/deduplicate-pixel-and-server-events). Meta identifica que dos eventos son el mismo cuando tienen:
 
 1. **El mismo nombre de evento**, por ejemplo Purchase en los dos lados.
 2. **El mismo identificador de evento** (event_id en el servidor y eventID en el píxel).
@@ -68,7 +68,7 @@ Si los dos coinciden, Meta se queda con uno solo. Si el identificador falta o no
 
 ## Calidad de coincidencia de eventos: qué es y cómo mejorarla
 
-En el administrador de eventos, Meta muestra una calificación llamada **calidad de coincidencia de eventos** (Event Match Quality), en una escala de 1 a 10. Indica qué tan bien Meta logra relacionar tus eventos con personas reales en sus plataformas. A noviembre de 2026, Meta recomienda apuntar a una calificación de 6 o más cuando sea posible, y esta métrica está disponible para eventos web.
+En el administrador de eventos, Meta muestra una calificación llamada **calidad de coincidencia de eventos** (Event Match Quality), en una escala de 1 a 10. Indica qué tan bien Meta logra relacionar tus eventos con personas reales en sus plataformas. A noviembre de 2026, Meta recomienda apuntar a una calificación de 6 o más cuando sea posible, y esta métrica está disponible para eventos web, según su [documentación para desarrolladores](https://developers.facebook.com/documentation/ads-commerce/conversions-api/dataset-quality-api).
 
 Para mejorarla:
 
