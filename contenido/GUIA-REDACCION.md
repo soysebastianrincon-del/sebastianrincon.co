@@ -43,6 +43,10 @@ Shopify o costos promedio), verifícalo con WebSearch. Escríbelo con cautela ("
 no des la cifra y explica los factores que la determinan. Los ejemplos numéricos ilustrativos están
 permitidos siempre que se presenten como ejemplo ("supongamos que tu ticket es de $2.000.000…").
 
+**Precios de Sebastián o de Since: nunca.** Ni cifras, ni porcentajes de fee, ni ejemplos
+ilustrativos de lo que cobran (por ejemplo, "15 % sobre la inversión"). Todo se trabaja bajo
+**cotización sin compromiso**: cuando el tema sea precio, dilo así e invita a escribir por WhatsApp.
+
 ## Qué hace que un artículo posicione
 
 - Responde la pregunta en los primeros 2 o 3 párrafos, porque eso es lo que citan Google y las IA.

@@ -12,7 +12,7 @@ resumen: No hay una tarifa única. Lo que cobra un trafficker depende del modelo
 
 Por eso, en lugar de darte una cifra que no aplica a tu caso, te voy a explicar cómo se cobra, qué debería incluir lo que pagas y qué señales indican que te están vendiendo humo. Con eso vas a poder comparar propuestas con criterio.
 
-Soy Sebastián Rincón, trafficker con 8 años en Meta Ads y Google Ads y fundador de Since Agencia Marketing Digital. Aquí no voy a hablar de mis tarifas. Te voy a dar las herramientas para evaluar cualquier cotización, incluida la mía.
+Soy Sebastián Rincón, trafficker con 8 años en Meta Ads y Google Ads y fundador de Since Agencia Marketing Digital. Aquí no vas a encontrar mis tarifas: todo lo trabajo bajo cotización sin compromiso, armada según tu negocio y lo que de verdad necesitas. Lo que sí te doy son las herramientas para evaluar cualquier cotización, incluida la mía.
 
 ## Primero, separa dos cosas: el fee y la inversión en pauta
 
@@ -42,8 +42,6 @@ El trafficker cobra un porcentaje de lo que inviertes en pauta. Casi siempre vie
 **Ventajas:** el honorario crece con el tamaño de la cuenta, lo cual tiene lógica porque más inversión suele implicar más campañas y más control.
 
 **Desventajas:** puede crear un incentivo a recomendarte subir presupuesto. Un trafficker serio te dirá cuándo **no** subir, aunque le convenga.
-
-**Ejemplo para ilustrar la cuenta:** supongamos que inviertes $6.000.000 al mes en pauta y acordaste un porcentaje del 15 %. El fee sería $900.000, más la inversión. Ese porcentaje es solo un ejemplo para que veas cómo se calcula, no una tarifa de referencia.
 
 **Funciona bien para:** cuentas medianas o grandes, con inversión que cambia mes a mes.
 
@@ -138,7 +136,7 @@ Vale la pena cuando la mejora en resultados es mayor que el fee. Haz esta cuenta
 
 En Since cada cliente tiene un trafficker asignado, y trabajamos con el principio de que las ventas van antes que el alcance. Puedes ver cómo trabajo en el servicio de [trafficker de Meta Ads](/servicios/pauta-meta-ads/).
 
-Si quieres que revisemos tu cuenta o tu proyecto y te diga qué tipo de servicio necesitas de verdad, escríbeme por WhatsApp. Te respondo con claridad, incluso si la respuesta es que todavía no te conviene contratar a nadie.
+Si quieres que revisemos tu cuenta o tu proyecto y te diga qué tipo de servicio necesitas de verdad, escríbeme por WhatsApp y te envío una cotización sin compromiso. Te respondo con claridad, incluso si la respuesta es que todavía no te conviene contratar a nadie.
 
 ## Preguntas frecuentes
 
