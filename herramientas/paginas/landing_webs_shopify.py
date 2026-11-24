@@ -103,7 +103,7 @@ body = f'''
 <section class="lp-form-sec" id="cotizar">
   <div class="wrap lp-form-grid">
     <div class="rv"><h2>Cotiza en 1 minuto</h2><p class="muted">Responde estas preguntas y se abre WhatsApp con tu mensaje listo. Te respondo con el paquete y el precio que te sirve.</p></div>
-    <form id="leadForm" class="lp-form rv">
+    <form id="leadForm" class="lp-form rv" data-name="landing_webs">
       <div><label for="f-nombre">Tu nombre</label><input id="f-nombre" name="nombre" required autocomplete="name"></div>
       <div><label for="f-empresa">Empresa o marca</label><input id="f-empresa" name="empresa" autocomplete="organization"></div>
       <div class="full"><label for="f-servicio">¿Qué necesitas?</label><select id="f-servicio" name="servicio" required><option value="">Elige una opción</option><option>Landing page</option><option>Página web</option><option>Tienda Shopify</option><option>Página o tienda + pauta en Google/Meta</option><option>No estoy seguro</option></select></div>
