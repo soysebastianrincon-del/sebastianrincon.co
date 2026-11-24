@@ -14,12 +14,12 @@ PAQUETES = [
     ('Landing page', '$700.000', 'Una sola página enfocada en una oferta, hecha para recibir tráfico de Google Ads o Meta Ads y convertirlo en contactos.',
      ['Diseño a la medida de tu marca', 'Pensada primero para celular', 'Botón y formulario que llevan a tu WhatsApp', 'Google Tag Manager, Analytics y píxel de Meta', 'Textos orientados a vender', 'SEO básico'],
      'Ideal para campañas de Google Ads y Meta Ads.'),
-    ('Web corporativa', '$2.000.000', 'La web de tu empresa con varias páginas: inicio, servicios, nosotros y contacto, para que te encuentren en Google y te escriban.',
-     ['Diseño único alineado a tu marca', 'SEO técnico y de contenidos en cada página', 'Carga en menos de 2 segundos', 'Analytics y Search Console configurados', 'Hosting de por vida sin costo'],
-     'Para empresas de servicios y profesionales que venden confianza.'),
     ('Tienda Shopify', '$1.000.000', 'Tu ecommerce en Shopify listo para vender: catálogo, pagos, envíos y medición desde el primer día.',
      ['Tienda configurada y lista para vender', 'Pasarela de pago integrada (PayU, Wompi, Mercado Pago…)', 'Fichas de producto optimizadas para SEO', 'Gestión de inventario y órdenes', 'Emails transaccionales configurados', 'Píxel de Meta y Google conectados'],
      'Hasta 200 productos. Más productos se cotizan aparte.'),
+    ('Web corporativa', '$2.000.000', 'La web de tu empresa con varias páginas: inicio, servicios, nosotros y contacto, para que te encuentren en Google y te escriban.',
+     ['Diseño único alineado a tu marca', 'SEO técnico y de contenidos en cada página', 'Carga en menos de 2 segundos', 'Analytics y Search Console configurados', 'Hosting de por vida sin costo'],
+     'Para empresas de servicios y profesionales que venden confianza.'),
 ]
 
 FAQ = [
@@ -107,7 +107,7 @@ body = f'''
 
 <section class="lp-pf" id="portafolio">
   <div class="wrap">
-    <div class="split-head rv"><h2>Páginas y tiendas que hemos hecho</h2><p>Algunos de los proyectos que hemos construido. Toca cualquiera para verlo en vivo.</p></div>
+    <div class="split-head rv"><h2>Proyectos que hemos desarrollado</h2><p>Algunos de los proyectos que hemos construido. Toca cualquiera para verlo en vivo.</p></div>
     <ul class="pf-grid rv">{pf}</ul>
   </div>
 </section>
