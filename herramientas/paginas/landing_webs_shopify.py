@@ -51,6 +51,23 @@ for nombre, precio, desc, items, nota in PAQUETES:
             f'<p class="pkg-desc">{desc}</p><ul>{lis}</ul><p class="pkg-note">{nota}</p>'
             f'<a href="{WA}" target="_blank" rel="noopener" class="btn btn-line">Cotizar {nombre[0].lower() + nombre[1:]} {A}</a></li>')
 
+
+PORTAFOLIO = [
+    ('cumbre', 'Cumbre Café Gourmet', 'Tienda Shopify', 'Café de especialidad de Salamina, Caldas. Nuestra marca familiar.', 'https://cumbrecafegourmet.com'),
+    ('haskell', 'Haskell Colombia', 'Tienda Shopify', 'Productos para el cuidado del cabello.', 'https://haskellcolombia.com'),
+    ('smartix', 'Smartix', 'Tienda Shopify', 'Cerraduras inteligentes para hogar y empresa.', 'https://www.cerradurassmartix.com'),
+    ('ivlu', 'IVLU Bogotá', 'Página web', 'Centro médico de rejuvenecimiento facial y capilar.', 'https://ivlumedicinaestetica.com'),
+    ('steffanny', 'Dra. Steffanny Camargo', 'Página web', 'Medicina estética en Bogotá.', 'https://drasteffannycamargo.com'),
+    ('hermes', 'Dr. Hermes Gamba', 'Página web', 'Cirujano plástico en Bogotá, Bucaramanga y Tunja.', 'https://hermesgamba.com'),
+]
+pf = ''.join(
+    f'<li><a class="pf-card" href="{url}" target="_blank" rel="noopener">'
+    f'<span class="pf-shot"><picture><source srcset="{r("/assets/img/portafolio/" + k)}.webp" type="image/webp">'
+    f'<img src="{r("/assets/img/portafolio/" + k)}.jpg" alt="Página de inicio de {n}" width="960" height="600" loading="lazy"></picture></span>'
+    f'<span class="pf-meta"><span class="pf-type">{t}</span><b>{n}</b><span class="pf-desc">{d}</span>'
+    f'<span class="pf-url">{url.replace("https://", "").replace("www.", "")} ↗</span></span></a></li>'
+    for k, n, t, d, url in PORTAFOLIO)
+
 faq = ''.join(f'<details><summary>{q}</summary><p>{a}</p></details>' for q, a in FAQ)
 
 body = f'''
@@ -69,7 +86,7 @@ body = f'''
         <p class="hx-tag">Páginas web · Landing pages · Tiendas Shopify</p>
         <h1>Páginas web y tiendas Shopify hechas para vender</h1>
         <p class="lead">Diseño tu página o tu tienda con mirada de trafficker: rápida, clara y lista para recibir pauta en Google y Meta y convertir visitas en mensajes y ventas.</p>
-        <div class="ctas"><a href="{WA}" target="_blank" rel="noopener" class="btn btn-gold">Cotizar por WhatsApp {A}</a><a href="#paquetes" class="btn btn-line">Ver paquetes y precios</a></div>
+        <div class="ctas"><a href="{WA}" target="_blank" rel="noopener" class="btn btn-gold">Cotizar por WhatsApp {A}</a><a href="#portafolio" class="btn btn-line">Ver trabajos y precios</a></div>
       </div>
       <aside class="fit"><h2>Es para ti si</h2><ul><li>{CHECK}<span>Tu negocio no tiene página web o la que tienes no te trae clientes</span></li><li>{CHECK}<span>Vendes por redes o WhatsApp y quieres tu tienda en línea</span></li><li>{CHECK}<span>Vas a hacer pauta y necesitas una página que convierta</span></li><li>{CHECK}<span>Quieres a alguien que entienda de ventas, no solo de diseño</span></li></ul></aside>
     </div>
@@ -88,6 +105,13 @@ body = f'''
   </div>
 </section>
 
+<section class="lp-pf" id="portafolio">
+  <div class="wrap">
+    <div class="split-head rv"><h2>Páginas y tiendas que hemos hecho</h2><p>Algunos de los proyectos que hemos construido. Toca cualquiera para verlo en vivo.</p></div>
+    <ul class="pf-grid rv">{pf}</ul>
+  </div>
+</section>
+
 <section class="paper lp-pkgs" id="paquetes">
   <div class="wrap">
     <div class="split-head rv"><h2>Paquetes y precios</h2><p>Precios de referencia. El valor final depende de lo que necesites y te lo confirmo antes de empezar.</p></div>
@@ -95,7 +119,6 @@ body = f'''
   </div>
 </section>
 
-<!-- PORTAFOLIO: se agrega cuando haya webs de clientes autorizadas -->
 
 <section class="svc-process">
   <div class="wrap"><div class="split-head rv"><h2>Cómo trabajamos</h2></div><ol class="process timeline rv">
