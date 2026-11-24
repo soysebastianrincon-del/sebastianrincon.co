@@ -4,23 +4,26 @@ import generar as g
 
 D = 1
 U = '/paginas-web-y-tiendas-shopify/'
-T = 'Páginas web y tiendas Shopify en Colombia | Sebastián Rincón'
+T = 'Páginas web y tiendas Shopify desde $700.000 | Sebastián Rincón'
 DESC = 'Diseño de páginas web, landing pages y tiendas Shopify listas para vender y para recibir pauta en Google y Meta. Precios desde y cotización por WhatsApp.'
 A = g.ARROW
 CHECK = '<svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>'
 WA = g.WA
 
 PAQUETES = [
-    ('Landing page', 'PRECIO_LANDING', 'Una sola página enfocada en una oferta, hecha para recibir tráfico de Google Ads o Meta Ads y convertirlo en contactos.',
-     ['Diseño a la medida de tu marca', 'Pensada primero para celular', 'Botón y formulario que llevan a tu WhatsApp', 'Google Tag Manager, Analytics y píxel de Meta', 'Textos orientados a vender', 'SEO básico']),
-    ('Página web', 'PRECIO_WEB', 'La web de tu empresa con varias páginas: inicio, servicios, nosotros y contacto, para que te encuentren y te escriban.',
-     ['Todo lo de la landing page', 'Varias páginas internas', 'Estructura pensada para posicionar en Google', 'Velocidad y versión móvil cuidadas', 'Capacitación para editarla']),
-    ('Tienda Shopify', 'PRECIO_SHOPIFY', 'Tu ecommerce en Shopify listo para vender: catálogo, pagos, envíos y medición desde el primer día.',
-     ['Tema configurado con tu identidad', 'Catálogo, variantes y colecciones', 'Pasarelas de pago y envíos en Colombia', 'Píxel de Meta, Google y analítica', 'Catálogo conectado a Meta y Google Shopping', 'Capacitación para administrarla']),
+    ('Landing page', '$700.000', 'Una sola página enfocada en una oferta, hecha para recibir tráfico de Google Ads o Meta Ads y convertirlo en contactos.',
+     ['Diseño a la medida de tu marca', 'Pensada primero para celular', 'Botón y formulario que llevan a tu WhatsApp', 'Google Tag Manager, Analytics y píxel de Meta', 'Textos orientados a vender', 'SEO básico'],
+     'Ideal para campañas de Google Ads y Meta Ads.'),
+    ('Web corporativa', '$2.000.000', 'La web de tu empresa con varias páginas: inicio, servicios, nosotros y contacto, para que te encuentren en Google y te escriban.',
+     ['Diseño único alineado a tu marca', 'SEO técnico y de contenidos en cada página', 'Carga en menos de 2 segundos', 'Analytics y Search Console configurados', 'Hosting de por vida sin costo'],
+     'Para empresas de servicios y profesionales que venden confianza.'),
+    ('Tienda Shopify', '$1.000.000', 'Tu ecommerce en Shopify listo para vender: catálogo, pagos, envíos y medición desde el primer día.',
+     ['Tienda configurada y lista para vender', 'Pasarela de pago integrada (PayU, Wompi, Mercado Pago…)', 'Fichas de producto optimizadas para SEO', 'Gestión de inventario y órdenes', 'Emails transaccionales configurados', 'Píxel de Meta y Google conectados'],
+     'Hasta 200 productos. Más productos se cotizan aparte.'),
 ]
 
 FAQ = [
-    ('¿Qué incluye el precio "desde"?', 'Es el valor base de cada paquete. El precio final depende de cuántas páginas o productos necesites, de las integraciones y de si ya tienes textos y fotos. Te doy un valor cerrado antes de empezar.'),
+    ('¿Qué incluye el precio "desde"?', 'Es el valor base de cada paquete, en pesos colombianos. El precio final depende de cuántas páginas o productos necesites, de las integraciones y de si ya tienes textos y fotos. Te doy un valor cerrado antes de empezar.'),
     ('¿Puedo administrar la página o la tienda yo mismo?', 'Sí. Al entregarla te enseño a cambiar textos, subir productos, gestionar pedidos y crear promociones, según el paquete.'),
     ('¿El plan de Shopify está incluido?', 'No. El plan mensual de Shopify se paga directamente a Shopify desde tu cuenta, así la tienda queda a tu nombre. Te ayudo a elegir el plan que necesitas.'),
     ('¿También me hacen la pauta en Google o Meta?', 'Sí, es mi especialidad. Puedo encargarme de la página y de las campañas en Google Ads y Meta Ads que le llevan clientes, con la medición conectada desde el primer día.'),
@@ -31,7 +34,10 @@ graph = [g.PERSON, g.WEBSITE,
          {"@type": "Service", "@id": f"{g.DOM}{U}#servicio", "name": "Páginas web y tiendas Shopify",
           "serviceType": "Diseño de páginas web, landing pages y tiendas Shopify", "description": DESC, "url": f"{g.DOM}{U}",
           "provider": {"@id": f"{g.DOM}/#sebastian"},
-          "areaServed": ["Colombia", "Estados Unidos", "México", "Ecuador", "Perú", "Curazao"]},
+          "areaServed": ["Colombia", "Estados Unidos", "México", "Ecuador", "Perú", "Curazao"],
+          "offers": [{"@type": "Offer", "name": n, "priceCurrency": "COP", "price": pr.replace('$', '').replace('.', ''),
+                      "priceSpecification": {"@type": "PriceSpecification", "minPrice": pr.replace('$', '').replace('.', ''), "priceCurrency": "COP"}}
+                     for n, pr, *_ in PAQUETES]},
          {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in FAQ]}]
 
 head = g.head(D, T, DESC, U, graph).replace(
@@ -39,10 +45,10 @@ head = g.head(D, T, DESC, U, graph).replace(
 r = lambda u: g.r(u, D)
 
 paq = ''
-for nombre, precio, desc, items in PAQUETES:
+for nombre, precio, desc, items, nota in PAQUETES:
     lis = ''.join(f'<li>{CHECK}<span>{x}</span></li>' for x in items)
-    paq += (f'<li class="pkg"><h3>{nombre}</h3><p class="pkg-price"><span>Desde</span> <b>{precio}</b></p>'
-            f'<p class="pkg-desc">{desc}</p><ul>{lis}</ul>'
+    paq += (f'<li class="pkg"><h3>{nombre}</h3><p class="pkg-price"><span>Desde</span> <b>{precio}</b> <span>COP</span></p>'
+            f'<p class="pkg-desc">{desc}</p><ul>{lis}</ul><p class="pkg-note">{nota}</p>'
             f'<a href="{WA}" target="_blank" rel="noopener" class="btn btn-line">Cotizar {nombre[0].lower() + nombre[1:]} {A}</a></li>')
 
 faq = ''.join(f'<details><summary>{q}</summary><p>{a}</p></details>' for q, a in FAQ)

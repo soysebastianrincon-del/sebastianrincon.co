@@ -942,3 +942,5 @@ html{scrollbar-color:#3a3833 var(--ink)}
 .lp-foot a:hover{color:var(--text)}
 @media (max-width:1020px){.pkgs{grid-template-columns:minmax(0,1fr)}.lp-form-grid{grid-template-columns:minmax(0,1fr)}}
 @media (max-width:560px){.lp-form{grid-template-columns:minmax(0,1fr)}.pkg{padding:28px 22px}.pkg .btn{width:100%}}
+.pkg-note{font-size:.9rem;color:var(--paper-text);border-top:1px solid var(--paper-rule);padding-top:14px;margin-top:-4px}
+.pkg-price span:last-child{font-size:.8rem;letter-spacing:.08em}
