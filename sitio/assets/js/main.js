@@ -6,12 +6,13 @@
 
   // Barra de navegación
   var nav = document.querySelector('.nav');
-  var onScroll = function () { nav.classList.toggle('scrolled', window.scrollY > 20); };
+  var onScroll = function () { if (nav) nav.classList.toggle('scrolled', window.scrollY > 20); };
   onScroll();
   window.addEventListener('scroll', onScroll, { passive: true });
 
   var menu = document.querySelector('.menu');
   var burger = document.querySelector('.burger');
+  if (menu && burger) {
   burger.addEventListener('click', function () {
     var open = menu.classList.toggle('open');
     burger.setAttribute('aria-expanded', open);
@@ -19,6 +20,7 @@
   var closeMenu = function () { menu.classList.remove('open'); burger.setAttribute('aria-expanded', 'false'); };
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && menu.classList.contains('open')) { closeMenu(); burger.focus(); } });
   menu.addEventListener('click', function (e) { if (e.target.closest('a')) closeMenu(); });
+  }
 
   // Índice del artículo: cerrado por defecto en móvil
   var tocM = document.querySelector('.toc-m');
@@ -67,7 +69,7 @@
       (f.get('empresa') ? ' de ' + f.get('empresa') : '') +
       (f.get('pais') ? ' (' + f.get('pais') + ')' : '') +
       '. Me interesa: ' + f.get('servicio') + '. ' + (f.get('mensaje') || '');
-    (window.dataLayer = window.dataLayer || []).push({ event: 'generate_lead', form_name: 'contacto', servicio: f.get('servicio') });
+    (window.dataLayer = window.dataLayer || []).push({ event: 'generate_lead', method: 'formulario_whatsapp', form_name: form.dataset.name || 'contacto', page: location.pathname, servicio: f.get('servicio') });
     window.open('https://wa.me/' + WA + '?text=' + encodeURIComponent(msg.trim()), '_blank', 'noopener');
   });
 })();
