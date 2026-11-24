@@ -917,6 +917,33 @@ html{scrollbar-color:#3a3833 var(--ink)}
 .stmt-has-video .stmt-figs{margin-bottom:34px}
 @media (max-width:1020px){.stmt-has-video{grid-template-columns:minmax(0,1fr)}.stmt-video video{max-width:340px}}
 
+/* ---------- Landing: páginas web y tiendas Shopify ---------- */
+.lp-top{position:fixed;top:0;left:0;right:0}
+.lp-top .nav-in{justify-content:space-between}
+.lp-top-cta{padding:12px 20px}
+.lp-hero h1{max-width:16ch}
+.pkgs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;counter-reset:none}
+.pkg{display:flex;flex-direction:column;gap:16px;padding:34px 30px;border:1px solid var(--paper-rule);background:#F5F3F0}
+.pkg h3{font-size:1.7rem;font-stretch:80%}
+.pkg-price{display:flex;align-items:baseline;gap:8px;color:var(--paper-muted);font-size:.9rem}
+.pkg-price b{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(2.2rem,3.4vw,3rem);line-height:1;color:var(--gold-text-on-paper);font-variant-numeric:lining-nums tabular-nums}
+.pkg-desc{color:var(--paper-text)}
+.pkg ul{display:grid;gap:10px;margin-bottom:8px;flex:1}
+.pkg li{display:grid;grid-template-columns:20px 1fr;gap:10px;color:var(--paper-muted);font-size:.96rem;align-items:start}
+.pkg .ck{width:18px;height:18px;margin-top:3px;color:var(--gold-text-on-paper)}
+.pkg .btn{justify-self:start;align-self:flex-start;border-color:rgba(20,20,20,.4);color:var(--paper-text)}
+.pkg .btn:hover{background:var(--paper-text);color:var(--paper);border-color:var(--paper-text)}
+.lp-form-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:48px 72px;align-items:start}
+.lp-form-grid h2{font-size:clamp(2.4rem,5vw,4.2rem);font-stretch:75%;line-height:.92;margin-bottom:18px}
+.lp-form select{appearance:none;-webkit-appearance:none}
+.lp-form textarea{resize:vertical}
+.lp-foot{border-top:1px solid var(--rule);padding:28px 0 96px;font-size:.85rem;color:var(--muted)}
+.lp-foot .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.lp-foot a:hover{color:var(--text)}
+@media (max-width:1020px){.pkgs{grid-template-columns:minmax(0,1fr)}.lp-form-grid{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:560px){.lp-form{grid-template-columns:minmax(0,1fr)}.pkg{padding:28px 22px}.pkg .btn{width:100%}}
+.pkg-note{font-size:.9rem;color:var(--paper-text);border-top:1px solid var(--paper-rule);padding-top:14px;margin-top:-4px}
+.pkg-price span:last-child{font-size:.8rem;letter-spacing:.08em}
 /* =====================================================================
    Escala contenida (22 nov 2026): el usuario pidió que nada se vea tan
    grande (dos rondas). Reduce títulos, cifras y espacios entre secciones.

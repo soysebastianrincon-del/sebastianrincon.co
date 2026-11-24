@@ -805,6 +805,7 @@ WA_MSGS = {
     '/servicios/tiendas-shopify/': 'Hola Sebastián, necesito una tienda Shopify para vender ___. ¿Hablamos?',
     '/servicios/pauta-empresas-de-servicios/': 'Hola Sebastián, mi empresa vende ___ (servicio de alto valor) y quiero más clientes potenciales calificados. ¿Lo revisamos?',
     '/servicios/publicidad-para-medicos-y-clinicas/': 'Hola Sebastián, soy médico/clínica de ___ (especialidad y ciudad). Me llegan mensajes pero pocos agendan. ¿Lo revisamos?',
+    '/paginas-web-y-tiendas-shopify/': 'Hola Sebastián, vi tu página de páginas web y tiendas Shopify. Necesito ___ (landing, página web o tienda) para mi negocio de ___. ¿Me cotizas?',
     '/resultados/': 'Hola Sebastián, vi tus resultados. Mi empresa vende ___ y quiero saber si mi caso aplica.',
 }
 WA_DEFECTO = 'Hola Sebastián, vengo de tu web. Vendo ___ y hoy invierto ___ al mes en pauta. Quiero que revises mi cuenta.'
